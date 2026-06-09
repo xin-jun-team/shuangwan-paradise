@@ -1,0 +1,291 @@
+{
+  "records": [
+    {
+      "title": "免台幣天堂 首頁",
+      "category": "首頁",
+      "url": "index.html",
+      "description": "0元起玩，靠技術爽當大爺。不課金也能頂尖的天堂私服。",
+      "content": "免台幣天堂 首頁 開服 新手 免費 不課金 手動 技術 大爺 加入 開始遊戲 下載 LINE"
+    },
+    {
+      "title": "推文與直播",
+      "category": "推文/活動",
+      "url": "promote.html",
+      "description": "每日推文獎勵、包月代工服務、開服直接線領千元鑽石。",
+      "content": "推文 推文獎勵 藍鑽 包月 包季 直播 LINE 推文代工 回報 截圖 獎勵 每日推 開服 千元鑽石 06/01 58等"
+    },
+    {
+      "title": "VIP 貴賓卡特權",
+      "category": "VIP/特權",
+      "url": "vip.html",
+      "description": "VIP 貴賓卡專屬特權，隱藏之谷、支配之塔、PVP幣、特殊稱號。",
+      "content": "VIP 貴賓卡 特權 隱藏之谷 支配之塔 PVP幣 稱號 專屬 倉庫 擴充 加速 特殊地圖 高經驗"
+    },
+    {
+      "title": "遊戲特色總覽",
+      "category": "遊戲特色",
+      "url": "features.html",
+      "description": "全站 13 項遊戲特色，包含神奇扭蛋、聖物、威望、職業技能等。",
+      "content": "遊戲特色 扭蛋 聖物 威望 職業 特技 徽章 寵物 變身 娃娃 換金 倍率 在線禮包 血量 下載 BOSS 地圖"
+    },
+    {
+      "title": "遊戲規章",
+      "category": "規定",
+      "url": "rules.html",
+      "description": "伺服器規則、違規處罰、遊戲秩序說明。",
+      "content": "規章 規則 違規 處罰 封號 禁止 外掛 頻道 秩序 公告 禮儀 申訴"
+    },
+    {
+      "title": "免責聲明",
+      "category": "規定",
+      "url": "disclaimer.html",
+      "description": "免台幣天堂免責聲明與使用條款。",
+      "content": "免責聲明 條款 聲明 隱私 資料 服務 使用"
+    },
+    {
+      "title": "檔案下載",
+      "category": "下載",
+      "url": "download.html",
+      "description": "遊戲客戶端下載、安裝說明、防外掛工具。",
+      "content": "下載 安裝 客戶端 遊戲 exe 安裝包 防外掛 Gameguard 教學"
+    },
+    {
+      "title": "防外掛驗證教學",
+      "category": "下載",
+      "url": "anti-cheat.html",
+      "description": "GameGuard 防外掛驗證步驟教學。",
+      "content": "防外掛 GameGuard 驗證 教學 安裝 步驟 外掛 偵測 通過"
+    },
+    {
+      "title": "BOSS 介紹",
+      "category": "地圖/BOSS",
+      "url": "boss.html",
+      "description": "各地圖 BOSS 分布、重生時間、掉落物品總覽。",
+      "content": "BOSS 巨大怪 重生 復活 時間 掉落 地圖 打寶 法師 騎士 妖精 黑暗精靈 血盟 攻打"
+    },
+    {
+      "title": "地圖介紹",
+      "category": "地圖/BOSS",
+      "url": "maps.html",
+      "description": "全伺服器地圖介紹，包含刷怪點、傳送位置、特殊區域。",
+      "content": "地圖 傳送 刷怪 打怪 場景 副本 地下城 隱藏之谷 支配之塔 伊甸 蟻窟 精靈之森 象牙塔 OL"
+    },
+    {
+      "title": "武器介紹",
+      "category": "道具/裝備",
+      "url": "weapons.html",
+      "description": "伺服器全武器屬性、取得方式與推薦配裝。",
+      "content": "武器 刀 槍 弓 法杖 短劍 匕首 屬性 強化 附魔 打造 掉落 BF 精煉"
+    },
+    {
+      "title": "防具介紹",
+      "category": "道具/裝備",
+      "url": "armor.html",
+      "description": "全套防具屬性、套裝效果與取得方式。",
+      "content": "防具 盔甲 套裝 布甲 皮甲 鎖甲 板甲 屬性 防禦 取得 強化 補丁"
+    },
+    {
+      "title": "道具介紹",
+      "category": "道具/裝備",
+      "url": "items.html",
+      "description": "消耗品、強化石、材料道具全圖鑑。",
+      "content": "道具 消耗品 強化石 材料 回城捲軸 藍鑽 紅鑽 鑽石 藥水 商店 圖鑑 換金 合成"
+    },
+    {
+      "title": "版本爆率",
+      "category": "爆率/系統",
+      "url": "rates.html",
+      "description": "本伺服器怪物爆率、掉落率設定說明。",
+      "content": "爆率 掉落 機率 倍率 掉落率 BOSS掉 怪掉 稀有 設定 版本"
+    },
+    {
+      "title": "神奇扭蛋",
+      "category": "爆率/系統",
+      "url": "gacha.html",
+      "description": "神奇扭蛋系統說明、獎池內容與機率。",
+      "content": "扭蛋 抽獎 神奇 獎池 機率 抽卡 道具 稀有 限定 保底"
+    },
+    {
+      "title": "變身介紹",
+      "category": "系統說明",
+      "url": "transform.html",
+      "description": "變身圖鑑，各變身外觀與能力值介紹。",
+      "content": "變身 圖鑑 外觀 收藏 能力 變身卷軸 種類 稀有 效果"
+    },
+    {
+      "title": "娃娃介紹",
+      "category": "系統說明",
+      "url": "dolls.html",
+      "description": "娃娃圖鑑，各娃娃外觀與加成效果。",
+      "content": "娃娃 圖鑑 收藏 外觀 加成 效果 稀有 掉落 取得"
+    },
+    {
+      "title": "聖物系統介紹",
+      "category": "系統說明",
+      "url": "relic.html",
+      "description": "聖物系統說明，聖物種類、強化與效果。",
+      "content": "聖物 系統 強化 效果 種類 材料 合成 稀有 屬性 加成"
+    },
+    {
+      "title": "威望系統",
+      "category": "系統說明",
+      "url": "feature-mastery.html",
+      "description": "威望系統說明，威望點數獲得與兌換方式。",
+      "content": "威望 系統 點數 兌換 任務 日常 獎勵 累積 等級 效果"
+    },
+    {
+      "title": "在線禮包",
+      "category": "系統說明",
+      "url": "event-line.html",
+      "description": "在線時數禮包，每日在線即可獲得獎勵。",
+      "content": "在線禮包 在線獎勵 時數 每日 自動 發放 登入 禮包 道具"
+    },
+    {
+      "title": "寵物系統介紹",
+      "category": "系統說明",
+      "url": "feature-01.html",
+      "description": "寵物系統說明，寵物種類、技能與培養。",
+      "content": "寵物 系統 技能 培養 進化 餵食 裝備 效果 稀有 召喚"
+    },
+    {
+      "title": "職業之力介紹",
+      "category": "系統說明",
+      "url": "feature-02.html",
+      "description": "各職業專屬力量技能介紹。",
+      "content": "職業 之力 騎士 法師 妖精 黑暗精靈 龍騎 特殊技能 力量 效果"
+    },
+    {
+      "title": "職業特色技能",
+      "category": "系統說明",
+      "url": "feature-03.html",
+      "description": "職業特色技能詳解。",
+      "content": "技能 職業特色 騎士 法師 妖精 精靈 龍騎 主動 被動 效果 冷卻"
+    },
+    {
+      "title": "換金道具",
+      "category": "系統說明",
+      "url": "feature-04.html",
+      "description": "換金道具說明，如何透過遊玩兌換遊戲幣。",
+      "content": "換金 道具 金幣 遊戲幣 兌換 免費 刷怪 任務 獲得 販售"
+    },
+    {
+      "title": "高寵介紹",
+      "category": "系統說明",
+      "url": "feature-05.html",
+      "description": "高級寵物種類與取得方式。",
+      "content": "高寵 高級寵物 稀有 掉落 培養 進化 技能 外觀 效果"
+    },
+    {
+      "title": "法師召喚物系統",
+      "category": "系統說明",
+      "url": "feature-06.html",
+      "description": "法師專屬召喚物系統介紹。",
+      "content": "法師 召喚物 系統 召喚 技能 效果 支援 攻擊 魔法"
+    },
+    {
+      "title": "戰馬雕像能力",
+      "category": "系統說明",
+      "url": "feature-07.html",
+      "description": "戰馬與雕像能力加成說明。",
+      "content": "戰馬 雕像 能力 加成 強化 效果 騎乘 移動速度 屬性"
+    },
+    {
+      "title": "戰場徽章系統",
+      "category": "系統說明",
+      "url": "battle-badge.html",
+      "description": "戰場徽章獲得方式與加成效果。",
+      "content": "徽章 戰場 PVP 加成 效果 獲得 兌換 任務 等級 升級"
+    },
+    {
+      "title": "四龍之魔眼",
+      "category": "系統說明",
+      "url": "dragon-eye.html",
+      "description": "四龍之魔眼系統說明與取得方式。",
+      "content": "四龍 魔眼 系統 龍 屬性 取得 合成 效果 強化"
+    },
+    {
+      "title": "六芒星徽章",
+      "category": "系統說明",
+      "url": "hexagram.html",
+      "description": "六芒星徽章系統說明。",
+      "content": "六芒星 徽章 系統 取得 合成 效果 強化 稀有"
+    },
+    {
+      "title": "主線任務勳章",
+      "category": "系統說明",
+      "url": "feature-11.html",
+      "description": "主線任務勳章系統，完成任務獲得勳章加成。",
+      "content": "主線 任務 勳章 系統 完成 獎勵 加成 效果 進度 故事"
+    },
+    {
+      "title": "傲慢的掛飾",
+      "category": "系統說明",
+      "url": "feature-08.html",
+      "description": "傲慢掛飾取得方式與屬性加成。",
+      "content": "傲慢 掛飾 裝備 加成 屬性 取得 效果 稀有"
+    },
+    {
+      "title": "回憶蠟燭與洗血",
+      "category": "系統說明",
+      "url": "blood-reset.html",
+      "description": "回憶蠟燭使用說明與洗血教學。",
+      "content": "回憶蠟燭 洗血 重置 血量 教學 使用 道具 HP 重設"
+    },
+    {
+      "title": "赫卡特介紹",
+      "category": "系統說明",
+      "url": "feature-09.html",
+      "description": "赫卡特系統說明與功能介紹。",
+      "content": "赫卡特 系統 功能 介紹 NPC 特殊"
+    },
+    {
+      "title": "專精證明",
+      "category": "系統說明",
+      "url": "feature-10.html",
+      "description": "專精證明取得方式與效果。",
+      "content": "專精 證明 取得 效果 任務 道具 加成"
+    },
+    {
+      "title": "推文系統",
+      "category": "系統說明",
+      "url": "feature-12.html",
+      "description": "推文系統說明，如何推文獲得獎勵。",
+      "content": "推文 系統 獎勵 藍鑽 LINE 每日 回報 截圖 推廣"
+    },
+    {
+      "title": "活動公告",
+      "category": "活動",
+      "url": "events.html",
+      "description": "最新活動列表，開服慶典、限時活動、節日活動。",
+      "content": "活動 公告 慶典 限時 節日 獎勵 開服 特別 期間限定"
+    },
+    {
+      "title": "58等衝等活動",
+      "category": "活動",
+      "url": "event-58hero.html",
+      "description": "58等衝等活動，活動期間衝到58等領取英雄神武再送發財金。",
+      "content": "58等 衝等 活動 英雄 神武 發財金 獎勵 等級 升等 期間"
+    },
+    {
+      "title": "烽火慶典禮包",
+      "category": "活動",
+      "url": "event-bonfire.html",
+      "description": "烽火慶典活動禮包內容與領取方式。",
+      "content": "烽火 慶典 禮包 活動 領取 期間 獎勵 內容"
+    },
+    {
+      "title": "消滅海怪 拯救屈原",
+      "category": "活動",
+      "url": "event-dragon-boat.html",
+      "description": "端午節消滅海怪活動，打倒海怪拯救屈原獲得獎勵。",
+      "content": "海怪 屈原 端午 活動 消滅 獎勵 節日 期間限定"
+    },
+    {
+      "title": "預約LINE禮包",
+      "category": "活動",
+      "url": "referral.html",
+      "description": "加入官方 LINE 預約禮包，新手開始就送好禮。",
+      "content": "預約 LINE 禮包 新手 加入 官方 好禮 開始 申請 免費"
+    }
+  ]
+}

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>爽玩天堂 - 全站搜尋</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .search-wrap { max-width: 820px; margin: 0 auto; padding: 32px 16px 80px; }
+  .search-title { text-align: center; font-size: 1.6em; color: var(--pink); margin-bottom: 6px; font-weight: bold; }
+  .search-sub { text-align: center; color: var(--text-muted); font-size: .88em; margin-bottom: 24px; }
+  .search-form { display: flex; gap: 8px; margin-bottom: 14px; }
+  .search-input {
+    flex: 1; padding: 13px 18px; font-size: 1.05em;
+    background: var(--bg2); border: 2px solid var(--border);
+    border-radius: 10px; color: var(--text); outline: none;
+    transition: border-color .2s;
+  }
+  .search-input:focus { border-color: var(--pink); }
+  .search-btn {
+    padding: 13px 26px; background: var(--pink); color: #fff;
+    border: none; border-radius: 10px; font-size: 1em;
+    cursor: pointer; font-weight: bold; white-space: nowrap;
+  }
+  .search-btn:hover { opacity: .85; }
+  .chip-row { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 22px; }
+  .chip {
+    padding: 5px 14px; border-radius: 20px; font-size: .82em;
+    background: var(--bg2); border: 1px solid var(--border);
+    color: var(--text-muted); cursor: pointer; transition: all .18s;
+  }
+  .chip:hover, .chip.active { border-color: var(--pink); color: var(--pink); background: rgba(0,200,150,.08); }
+  .search-summary { font-size: .88em; color: var(--text-muted); margin-bottom: 14px; min-height: 22px; }
+  .result-card {
+    background: var(--bg2); border: 1px solid var(--border);
+    border-radius: 10px; padding: 16px 20px;
+    margin-bottom: 10px; text-decoration: none; display: flex;
+    align-items: flex-start; gap: 14px;
+    transition: border-color .18s, background .18s, box-shadow .18s;
+    cursor: pointer;
+  }
+  .result-card:hover {
+    border-color: var(--pink);
+    background: rgba(0,200,150,.06);
+    box-shadow: 0 0 14px rgba(0,200,150,.18);
+  }
+  .result-icon { font-size: 1.6em; flex-shrink: 0; margin-top: 2px; }
+  .result-body { flex: 1; min-width: 0; }
+  .result-title { font-size: 1.05em; font-weight: bold; color: var(--pink); margin-bottom: 3px; }
+  .result-url { font-size: .75em; color: rgba(0,200,150,.6); margin-bottom: 5px; font-family: monospace; }
+  .result-category { display: inline-block; font-size: .73em; color: var(--text-muted);
+    background: rgba(255,255,255,.06); border: 1px solid var(--border);
+    border-radius: 4px; padding: 1px 7px; margin-bottom: 5px; }
+  .result-snippet { font-size: .87em; color: var(--text-muted); line-height: 1.7; }
+  .result-snippet mark { background: rgba(0,200,150,.22); color: #00ffc3; border-radius: 2px; padding: 0 2px; font-style: normal; }
+  .result-arrow { flex-shrink: 0; color: var(--pink); font-size: 1.1em; margin-top: 4px; opacity: .6; }
+  .search-empty { text-align: center; padding: 56px 0; color: var(--text-muted); }
+  .search-empty .ei { font-size: 3em; margin-bottom: 12px; }
+  .search-hint { text-align: center; padding: 32px 0; color: var(--text-muted); font-size: .9em; }
+</style>
+</head>
+<body>
+
+<!-- ══ 導覽列 ══ -->
+<nav class="topnav">
+  <a class="topnav-logo" href="index.html">⚔️ 爽玩天堂</a>
+  <div class="topnav-sep"></div>
+  <div class="topnav-links" id="navLinks"><a class="topnav-link" href="index.html">首頁</a><a class="topnav-link" href="events-list.html">活動介紹</a><a class="topnav-link" href="features.html">遊戲特色</a><a class="topnav-link" href="items.html">裝備與道具</a><a class="topnav-link" href="boss.html">BOSS介紹</a><a class="topnav-link" href="maps.html">地圖特殊掉落</a><a class="topnav-link" href="download.html">檔案下載</a><a class="topnav-link" href="rates.html">版本倍率</a><a class="topnav-link" href="promote.html">推文與直播</a><div class="topnav-dropdown"><a class="topnav-link">遊戲規章 ▾</a><div class="dropdown-menu"><a href="rules.html">伺服器規章</a><a href="disclaimer.html">免責聲明</a><a href="anti-cheat.html">防作弊聲明</a></div></div><div class="topnav-dropdown"><a class="topnav-link">聯絡我們 ▾</a><div class="dropdown-menu"><a href="https://line.me/ti/g2/RXF5-vodTEcXp_iqPF8wcDh3Wnxxrd4hpo_RNQ?utm_source=invitation&utm_medium=link_copy&utm_campaign=default" target="_blank">LINE 官方社群</a><a href="https://lin.ee/Otc2gGk" target="_blank">LINE 官方</a></div></div><a class="topnav-link" href="search.html" style="color:var(--pink);font-weight:bold">🔍 搜尋</a></div>
+  <div class="topnav-right">
+    <a class="topnav-line-btn" href="https://lin.ee/TlneDmQ" target="_blank">LINE 客服</a>
+  </div>
+  <div class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="search-wrap">
+  <div class="search-title">🔍 全站搜尋</div>
+  <div class="search-sub">輸入關鍵字，找到你要的頁面</div>
+
+  <form class="search-form" id="search-form">
+    <input class="search-input" id="search-input" type="search"
+      placeholder="試試：推文、BOSS、VIP、下載、扭蛋…" autocomplete="off">
+    <button class="search-btn" type="submit">搜尋</button>
+  </form>
+
+  <div class="chip-row" id="chip-row">
+    <button type="button" class="chip" data-q="推文">💬 推文獎勵</button>
+    <button type="button" class="chip" data-q="VIP">👑 VIP特權</button>
+    <button type="button" class="chip" data-q="BOSS">⚔️ BOSS</button>
+    <button type="button" class="chip" data-q="扭蛋">🎰 扭蛋</button>
+    <button type="button" class="chip" data-q="變身">🔮 變身</button>
+    <button type="button" class="chip" data-q="娃娃">🧸 娃娃</button>
+    <button type="button" class="chip" data-q="聖物">✨ 聖物</button>
+    <button type="button" class="chip" data-q="寵物">🐾 寵物</button>
+    <button type="button" class="chip" data-q="下載">📥 下載</button>
+    <button type="button" class="chip" data-q="活動">🎉 活動</button>
+    <button type="button" class="chip" data-q="武器">🗡️ 武器</button>
+    <button type="button" class="chip" data-q="58等">⭐ 58等活動</button>
+  </div>
+
+  <div class="search-summary" id="search-summary"></div>
+  <div id="search-results"><div class="search-hint">🔍 輸入任何關鍵字即可搜尋全站內容</div></div>
+</div>
+
+<script>
+var PAGES = [
+  { title:"爽玩天堂 首頁", cat:"首頁", icon:"🏠", url:"index.html", desc:"爽玩天堂 私服，靠技術爽當大爺。不課金也能頂尖的天堂私服。", kw:"爽玩天堂 首頁 開服 新手 免費 手動 技術 大爺 加入 開始遊戲 下載 LINE" },
+  { title:"推文與直播", cat:"推文/活動", icon:"📣", url:"promote.html", desc:"每日推文獎勵、包月代工服務、開服直接線領千元鑽石。", kw:"推文 推文獎勵 藍鑽 包月 包季 直播 LINE 推文代工 回報 截圖 獎勵 每日推 開服 千元鑽石 58等" },
+  { title:"遊戲特色總覽", cat:"遊戲特色", icon:"🎮", url:"features.html", desc:"全站 13 項遊戲特色，包含神奇扭蛋、聖物、威望、職業技能等。", kw:"遊戲特色 扭蛋 聖物 威望 職業 特技 徽章 寵物 變身 娃娃 換金 倍率 在線禮包 血量 下載 BOSS 地圖" },
+  { title:"遊戲規章", cat:"規定", icon:"📋", url:"rules.html", desc:"伺服器規則、違規處罰、遊戲秩序說明。", kw:"規章 規則 違規 處罰 封號 禁止 外掛 頻道 秩序 公告 禮儀 申訴" },
+  { title:"免責聲明", cat:"規定", icon:"📄", url:"disclaimer.html", desc:"爽玩天堂 免責聲明與使用條款。", kw:"免責聲明 條款 聲明 隱私 資料 服務 使用" },
+  { title:"檔案下載", cat:"下載", icon:"📥", url:"download.html", desc:"遊戲客戶端下載、安裝說明、防外掛工具。", kw:"下載 安裝 客戶端 遊戲 exe 安裝包 防外掛 Gameguard 教學" },
+  { title:"防外掛驗證教學", cat:"下載", icon:"🛡️", url:"anti-cheat.html", desc:"GameGuard 防外掛驗證步驟教學。", kw:"防外掛 GameGuard 驗證 教學 安裝 步驟 外掛 偵測 通過" },
+  { title:"BOSS 介紹", cat:"地圖/BOSS", icon:"💀", url:"boss.html", desc:"各地圖 BOSS 分布、重生時間、掉落物品總覽。", kw:"BOSS 巨大怪 重生 復活 時間 掉落 地圖 打寶 法師 騎士 妖精 黑暗精靈 血盟 攻打" },
+  { title:"地圖介紹", cat:"地圖/BOSS", icon:"🗺️", url:"maps.html", desc:"全伺服器地圖介紹，包含刷怪點、傳送位置、特殊區域。", kw:"地圖 傳送 刷怪 打怪 場景 副本 地下城 隱藏之谷 支配之塔 伊甸 蟻窟 精靈之森 象牙塔 OL" },
+  { title:"武器介紹", cat:"道具/裝備", icon:"⚔️", url:"weapons.html", desc:"伺服器全武器屬性、取得方式與推薦配裝。", kw:"武器 刀 槍 弓 法杖 短劍 匕首 屬性 強化 附魔 打造 掉落 BF 精煉" },
+  { title:"防具介紹", cat:"道具/裝備", icon:"🛡️", url:"armor.html", desc:"全套防具屬性、套裝效果與取得方式。", kw:"防具 盔甲 套裝 布甲 皮甲 鎖甲 板甲 屬性 防禦 取得 強化 補丁" },
+  { title:"道具介紹", cat:"道具/裝備", icon:"🎒", url:"items.html", desc:"消耗品、強化石、材料道具全圖鑑。", kw:"道具 消耗品 強化石 材料 回城捲軸 藍鑽 紅鑽 鑽石 藥水 商店 圖鑑 換金 合成" },
+  { title:"版本爆率", cat:"爆率/系統", icon:"📊", url:"rates.html", desc:"本伺服器怪物爆率、掉落率設定說明。", kw:"爆率 掉落 機率 倍率 掉落率 BOSS掉 怪掉 稀有 設定 版本" },
+  { title:"神奇扭蛋", cat:"爆率/系統", icon:"🎰", url:"gacha.html", desc:"神奇扭蛋系統說明、獎池內容與機率。", kw:"扭蛋 抽獎 神奇 獎池 機率 抽卡 道具 稀有 限定 保底" },
+  { title:"變身介紹", cat:"系統說明", icon:"🔮", url:"transform.html", desc:"變身圖鑑，各變身外觀與能力值介紹。", kw:"變身 圖鑑 外觀 收藏 能力 變身卷軸 種類 稀有 效果" },
+  { title:"娃娃介紹", cat:"系統說明", icon:"🧸", url:"dolls.html", desc:"娃娃圖鑑，各娃娃外觀與加成效果。", kw:"娃娃 圖鑑 收藏 外觀 加成 效果 稀有 掉落 取得" },
+  { title:"聖物系統介紹", cat:"系統說明", icon:"✨", url:"relic.html", desc:"聖物系統說明，聖物種類、強化與效果。", kw:"聖物 系統 強化 效果 種類 材料 合成 稀有 屬性 加成" },
+  { title:"威望系統", cat:"系統說明", icon:"⭐", url:"feature-mastery.html", desc:"威望系統說明，威望點數獲得與兌換方式。", kw:"威望 系統 點數 兌換 任務 日常 獎勵 累積 等級 效果" },
+  { title:"在線禮包", cat:"系統說明", icon:"🎁", url:"event-line.html", desc:"在線時數禮包，每日在線即可獲得獎勵。", kw:"在線禮包 在線獎勵 時數 每日 自動 發放 登入 禮包 道具" },
+  { title:"寵物系統介紹", cat:"系統說明", icon:"🐾", url:"feature-01.html", desc:"寵物系統說明，寵物種類、技能與培養。", kw:"寵物 系統 技能 培養 進化 餵食 裝備 效果 稀有 召喚" },
+  { title:"職業之力介紹", cat:"系統說明", icon:"💪", url:"feature-02.html", desc:"各職業專屬力量技能介紹。", kw:"職業 之力 騎士 法師 妖精 黑暗精靈 龍騎 特殊技能 力量 效果" },
+  { title:"職業特色技能", cat:"系統說明", icon:"🧙", url:"feature-03.html", desc:"職業特色技能詳解。", kw:"技能 職業特色 騎士 法師 妖精 精靈 龍騎 主動 被動 效果 冷卻" },
+  { title:"換金道具", cat:"系統說明", icon:"💰", url:"feature-04.html", desc:"換金道具說明，如何透過遊玩兌換遊戲幣。", kw:"換金 道具 金幣 遊戲幣 兌換 免費 刷怪 任務 獲得 販售" },
+  { title:"高寵介紹", cat:"系統說明", icon:"🐉", url:"feature-05.html", desc:"高級寵物種類與取得方式。", kw:"高寵 高級寵物 稀有 掉落 培養 進化 技能 外觀 效果" },
+  { title:"法師召喚物系統", cat:"系統說明", icon:"🔯", url:"feature-06.html", desc:"法師專屬召喚物系統介紹。", kw:"法師 召喚物 系統 召喚 技能 效果 支援 攻擊 魔法" },
+  { title:"戰馬雕像能力", cat:"系統說明", icon:"🐴", url:"feature-07.html", desc:"戰馬與雕像能力加成說明。", kw:"戰馬 雕像 能力 加成 強化 效果 騎乘 移動速度 屬性" },
+  { title:"戰場徽章系統", cat:"系統說明", icon:"🏅", url:"battle-badge.html", desc:"戰場徽章獲得方式與加成效果。", kw:"徽章 戰場 PVP 加成 效果 獲得 兌換 任務 等級 升級" },
+  { title:"四龍之魔眼", cat:"系統說明", icon:"👁️", url:"dragon-eye.html", desc:"四龍之魔眼系統說明與取得方式。", kw:"四龍 魔眼 系統 龍 屬性 取得 合成 效果 強化" },
+  { title:"六芒星徽章", cat:"系統說明", icon:"🔯", url:"hexagram.html", desc:"六芒星徽章系統說明。", kw:"六芒星 徽章 系統 取得 合成 效果 強化 稀有" },
+  { title:"主線任務勳章", cat:"系統說明", icon:"🏆", url:"feature-11.html", desc:"主線任務勳章系統，完成任務獲得勳章加成。", kw:"主線 任務 勳章 系統 完成 獎勵 加成 效果 進度 故事" },
+  { title:"傲慢的掛飾", cat:"系統說明", icon:"💎", url:"feature-08.html", desc:"傲慢掛飾取得方式與屬性加成。", kw:"傲慢 掛飾 裝備 加成 屬性 取得 效果 稀有" },
+  { title:"回憶蠟燭與洗血", cat:"系統說明", icon:"🕯️", url:"blood-reset.html", desc:"回憶蠟燭使用說明與洗血教學。", kw:"回憶蠟燭 洗血 重置 血量 教學 使用 道具 HP 重設" },
+  { title:"赫卡特介紹", cat:"系統說明", icon:"🌙", url:"feature-09.html", desc:"赫卡特系統說明與功能介紹。", kw:"赫卡特 系統 功能 介紹 NPC 特殊" },
+  { title:"專精證明", cat:"系統說明", icon:"📜", url:"feature-10.html", desc:"專精證明取得方式與效果。", kw:"專精 證明 取得 效果 任務 道具 加成" },
+  { title:"推文系統", cat:"系統說明", icon:"📢", url:"feature-12.html", desc:"推文系統說明，如何推文獲得獎勵。", kw:"推文 系統 獎勵 藍鑽 LINE 每日 回報 截圖 推廣" },
+  { title:"活動公告", cat:"活動", icon:"🎉", url:"events.html", desc:"最新活動列表，開服慶典、限時活動、節日活動。", kw:"活動 公告 慶典 限時 節日 獎勵 開服 特別 期間限定" },
+  { title:"58等衝等活動", cat:"活動", icon:"⭐", url:"event-58hero.html", desc:"58等衝等活動，衝到58等領取英雄神武再送發財金。", kw:"58等 衝等 活動 英雄 神武 發財金 獎勵 等級 升等 期間" },
+  { title:"烽火慶典禮包", cat:"活動", icon:"🔥", url:"event-bonfire.html", desc:"烽火慶典活動禮包內容與領取方式。", kw:"烽火 慶典 禮包 活動 領取 期間 獎勵 內容" },
+  { title:"消滅海怪 拯救屈原", cat:"活動", icon:"🐙", url:"event-dragon-boat.html", desc:"端午節消滅海怪活動，打倒海怪拯救屈原獲得獎勵。", kw:"海怪 屈原 端午 活動 消滅 獎勵 節日 期間限定" },
+  { title:"預約LINE禮包", cat:"活動", icon:"💌", url:"referral.html", desc:"加入官方 LINE 預約禮包，新手開始就送好禮。", kw:"預約 LINE 禮包 新手 加入 官方 好禮 開始 申請 免費" },
+];
+
+(function() {
+  var input  = document.getElementById('search-input');
+  var resEl  = document.getElementById('search-results');
+  var sumEl  = document.getElementById('search-summary');
+
+  function esc(s) {
+    return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  }
+
+  function hi(text, terms) {
+    var out = esc(text);
+    terms.forEach(function(t) {
+      if (!t) return;
+      out = out.replace(new RegExp('(' + t.replace(/[.*+?^${}()|[\]\\]/g,'\\$&') + ')', 'gi'), '<mark>$1</mark>');
+    });
+    return out;
+  }
+
+  function run(raw) {
+    var q = raw.trim();
+    if (!q) {
+      resEl.innerHTML = '<div class="search-hint">🔍 輸入任何關鍵字即可搜尋全站內容</div>';
+      sumEl.textContent = '';
+      return;
+    }
+    var terms = q.split(/\s+/).filter(Boolean).map(function(t){ return t.toLowerCase(); });
+    var scored = [];
+    PAGES.forEach(function(p) {
+      var hay = (p.title + p.cat + p.desc + p.kw).toLowerCase();
+      var matched = terms.filter(function(t){ return hay.indexOf(t) !== -1; });
+      if (matched.length === 0) return;
+      var s = 0;
+      matched.forEach(function(t) {
+        if (p.title.toLowerCase().indexOf(t) !== -1) s += 100;
+        if (p.cat.toLowerCase().indexOf(t)   !== -1) s += 40;
+        if (p.desc.toLowerCase().indexOf(t)  !== -1) s += 30;
+        if (p.kw.toLowerCase().indexOf(t)    !== -1) s += 10;
+      });
+      s += matched.length * 5;
+      scored.push({ p: p, s: s, matched: matched });
+    });
+    scored.sort(function(a,b){ return b.s - a.s; });
+    if (scored.length === 0) {
+      sumEl.textContent = '找不到「' + q + '」相關頁面';
+      resEl.innerHTML = '<div class="search-empty"><div class="ei">🔍</div>找不到符合的頁面，換個關鍵字試試</div>';
+      return;
+    }
+    sumEl.textContent = '找到 ' + scored.length + ' 個相關頁面';
+    var html = '';
+    scored.forEach(function(item) {
+      var p = item.p;
+      html += '<a class="result-card" href="' + p.url + '">'
+        + '<div class="result-icon">' + p.icon + '</div>'
+        + '<div class="result-body">'
+        +   '<div class="result-title">' + hi(p.title, item.matched) + '</div>'
+        +   '<div class="result-url">📎 ' + p.url + '</div>'
+        +   '<span class="result-category">' + esc(p.cat) + '</span>'
+        +   '<div class="result-snippet">' + hi(p.desc, item.matched) + '</div>'
+        + '</div>'
+        + '<div class="result-arrow">→</div>'
+        + '</a>';
+    });
+    resEl.innerHTML = html;
+  }
+
+  var timer;
+  input.addEventListener('input', function() {
+    clearTimeout(timer);
+    timer = setTimeout(function(){ run(input.value); }, 120);
+  });
+  document.getElementById('search-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    run(input.value);
+  });
+  document.querySelectorAll('.chip').forEach(function(c) {
+    c.addEventListener('click', function() {
+      input.value = c.dataset.q;
+      run(c.dataset.q);
+      input.focus();
+    });
+  });
+  var qp = new URLSearchParams(location.search).get('q');
+  if (qp) { input.value = qp; run(qp); }
+})();
+</script>
+<script src="main.js"></script>
+</body>
+</html>
