@@ -30,7 +30,11 @@
     <div class="section-eyebrow">遊戲特色</div>
     <h2 class="section-title" style="text-align:left">寵物系統介紹</h2>
   </div>
-  <div class="feature-detail-content">
+  <div style="display:flex;gap:0;border-bottom:2px solid #2e2828;margin-bottom:0">
+    <button class="pet-tab-btn" data-tab="tab-pet" onclick="switchPetTab(this)" style="padding:10px 22px;font-size:.9em;font-weight:700;cursor:pointer;border:none;border-bottom:3px solid #c9a96e;background:#1a1508;color:#c9a96e;border-radius:6px 6px 0 0;transition:all .2s">🐾 寵物系統介紹</button>
+    <button class="pet-tab-btn" data-tab="tab-shop" onclick="switchPetTab(this)" style="padding:10px 22px;font-size:.9em;font-weight:700;cursor:pointer;border:none;border-bottom:3px solid transparent;background:#131010;color:#9a8f85;border-radius:6px 6px 0 0;transition:all .2s">🛒 寵物商城裝備</button>
+  </div>
+  <div class="feature-detail-content" id="tab-pet">
 <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:24px">
   <div style="flex:1;min-width:260px;background:#131010;border:1px solid #2e2828;border-radius:10px;padding:18px">
     <h3 style="color:#c9a96e;margin:0 0 14px 0;border-left:3px solid #c9a96e;padding-left:10px;font-size:1em">💡 捕捉與進化</h3>
@@ -207,6 +211,133 @@
 </div></div></div>
 </div>
   </div>
+<div id="tab-shop" style="display:none">
+  <div style="background:#0e0b04;border:1px solid rgba(201,169,110,.4);border-left:4px solid #c9a96e;border-radius:8px;padding:16px 20px;margin-bottom:24px;display:flex;align-items:center;gap:14px">
+    <span style="font-size:2em">🏪</span>
+    <div>
+      <div style="color:#c9a96e;font-size:.78em;font-weight:700;letter-spacing:1px;margin-bottom:4px">NEW NPC</div>
+      <div style="color:#e8e2d8;font-size:1em;font-weight:700">主城鎮新增 NPC：<span style="color:#c9a96e">寵物製造商</span></div>
+      <div style="color:#9a8f85;font-size:.83em;margin-top:4px">透過寵物製造商製作專屬寵物裝備，強化你的戰寵戰力</div>
+    </div>
+  </div>
+  <div style="background:#131010;border:1px solid #2e2828;border-radius:10px;overflow:hidden;margin-bottom:24px">
+    <div style="background:#1c1508;padding:14px 20px;border-bottom:1px solid #2e2828;display:flex;align-items:center;gap:10px">
+      <span style="font-size:1.1em">⚒️</span>
+      <h3 style="margin:0;color:#c9a96e;font-size:1em;font-weight:700;letter-spacing:1px">製作需求清單</h3>
+    </div>
+    <div style="overflow-x:auto">
+      <table style="width:100%;border-collapse:collapse;font-size:.85em">
+        <thead>
+          <tr style="background:#1a1508">
+            <th style="padding:10px 16px;text-align:left;color:#c9a96e;font-weight:700;border-bottom:1px solid #2e2828;white-space:nowrap">裝備名稱</th>
+            <th style="padding:10px 16px;text-align:center;color:#c9a96e;font-weight:700;border-bottom:1px solid #2e2828;white-space:nowrap">類型</th>
+            <th style="padding:10px 16px;text-align:center;color:#c9a96e;font-weight:700;border-bottom:1px solid #2e2828;white-space:nowrap">藍鑽</th>
+            <th style="padding:10px 16px;text-align:center;color:#c9a96e;font-weight:700;border-bottom:1px solid #2e2828;white-space:nowrap">進化果實</th>
+            <th style="padding:10px 16px;text-align:center;color:#c9a96e;font-weight:700;border-bottom:1px solid #2e2828;white-space:nowrap">勝利果實</th>
+            <th style="padding:10px 16px;text-align:center;color:#c9a96e;font-weight:700;border-bottom:1px solid #2e2828;white-space:nowrap">稀有製作秘笈</th>
+            <th style="padding:10px 16px;text-align:center;color:#c9a96e;font-weight:700;border-bottom:1px solid #2e2828;white-space:nowrap">英雄製作秘笈</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid #2e2828">
+            <td style="padding:10px 16px;color:#e8e2d8;font-weight:700">紫色勳章</td>
+            <td style="padding:10px 16px;text-align:center"><span style="background:#1a0f2e;color:#bb86fc;border:1px solid #5a2d82;border-radius:4px;padding:2px 8px;font-size:.8em">武器</span></td>
+            <td style="padding:10px 16px;text-align:center;color:#4a9eff">1,999</td>
+            <td style="padding:10px 16px;text-align:center;color:#9a8f85">× 10</td>
+            <td style="padding:10px 16px;text-align:center;color:#9a8f85">× 5</td>
+            <td style="padding:10px 16px;text-align:center;color:#9a8f85">× 10</td>
+            <td style="padding:10px 16px;text-align:center;color:#ff9944">× 1</td>
+          </tr>
+          <tr style="border-bottom:1px solid #2e2828">
+            <td style="padding:10px 16px;color:#e8e2d8;font-weight:700">赤色勳章</td>
+            <td style="padding:10px 16px;text-align:center"><span style="background:#2e0a0a;color:#ff6b6b;border:1px solid #7a1a1a;border-radius:4px;padding:2px 8px;font-size:.8em">武器</span></td>
+            <td style="padding:10px 16px;text-align:center;color:#4a9eff">1,999</td>
+            <td style="padding:10px 16px;text-align:center;color:#9a8f85">× 10</td>
+            <td style="padding:10px 16px;text-align:center;color:#9a8f85">× 5</td>
+            <td style="padding:10px 16px;text-align:center;color:#9a8f85">× 10</td>
+            <td style="padding:10px 16px;text-align:center;color:#ff9944">× 1</td>
+          </tr>
+          <tr style="border-bottom:1px solid #2e2828">
+            <td style="padding:10px 16px;color:#e8e2d8;font-weight:700">聖晶之鎧</td>
+            <td style="padding:10px 16px;text-align:center"><span style="background:#0a1a2e;color:#4a9eff;border:1px solid #1a4a7a;border-radius:4px;padding:2px 8px;font-size:.8em">防具</span></td>
+            <td style="padding:10px 16px;text-align:center;color:#4a9eff">1,999</td>
+            <td style="padding:10px 16px;text-align:center;color:#9a8f85">× 10</td>
+            <td style="padding:10px 16px;text-align:center;color:#9a8f85">× 5</td>
+            <td style="padding:10px 16px;text-align:center;color:#9a8f85">× 10</td>
+            <td style="padding:10px 16px;text-align:center;color:#ff9944">× 1</td>
+          </tr>
+          <tr>
+            <td style="padding:10px 16px;color:#e8e2d8;font-weight:700">叢林之鎧</td>
+            <td style="padding:10px 16px;text-align:center"><span style="background:#0a1a2e;color:#4a9eff;border:1px solid #1a4a7a;border-radius:4px;padding:2px 8px;font-size:.8em">防具</span></td>
+            <td style="padding:10px 16px;text-align:center;color:#4a9eff">1,999</td>
+            <td style="padding:10px 16px;text-align:center;color:#9a8f85">× 10</td>
+            <td style="padding:10px 16px;text-align:center;color:#9a8f85">× 5</td>
+            <td style="padding:10px 16px;text-align:center;color:#9a8f85">× 10</td>
+            <td style="padding:10px 16px;text-align:center;color:#ff9944">× 1</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div style="background:#131010;border:1px solid #2e2828;border-radius:10px;overflow:hidden;margin-bottom:24px">
+    <div style="background:#1c1508;padding:14px 20px;border-bottom:1px solid #2e2828;display:flex;align-items:center;gap:10px">
+      <span style="font-size:1.1em">⚔️</span>
+      <h3 style="margin:0;color:#c9a96e;font-size:1em;font-weight:700;letter-spacing:1px">裝備能力介紹</h3>
+    </div>
+    <div style="padding:20px;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px">
+      <div style="background:#120c1e;border:1px solid #5a2d82;border-radius:8px;overflow:hidden">
+        <div style="background:#1a0f2e;padding:10px 16px;border-bottom:1px solid #5a2d82;display:flex;align-items:center;gap:8px">
+          <span style="font-size:1em">🔮</span>
+          <span style="color:#bb86fc;font-weight:700;font-size:.9em">紫色勳章</span>
+          <span style="margin-left:auto;background:#5a2d82;color:#bb86fc;border-radius:3px;padding:1px 7px;font-size:.75em">武器</span>
+        </div>
+        <div style="padding:12px 16px">
+          <div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid #2e2828"><span style="color:#9a8f85;font-size:.85em">攻擊成功</span><span style="color:#4ade80;font-size:.85em;font-weight:700">+30</span></div>
+          <div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid #2e2828"><span style="color:#9a8f85;font-size:.85em">力量</span><span style="color:#4ade80;font-size:.85em;font-weight:700">+20</span></div>
+          <div style="display:flex;justify-content:space-between;padding:5px 0"><span style="color:#9a8f85;font-size:.85em">魔攻</span><span style="color:#4ade80;font-size:.85em;font-weight:700">+50</span></div>
+        </div>
+      </div>
+      <div style="background:#1e0c0c;border:1px solid #7a1a1a;border-radius:8px;overflow:hidden">
+        <div style="background:#2e0a0a;padding:10px 16px;border-bottom:1px solid #7a1a1a;display:flex;align-items:center;gap:8px">
+          <span style="font-size:1em">🔴</span>
+          <span style="color:#ff6b6b;font-weight:700;font-size:.9em">赤色勳章</span>
+          <span style="margin-left:auto;background:#7a1a1a;color:#ff6b6b;border-radius:3px;padding:1px 7px;font-size:.75em">武器</span>
+        </div>
+        <div style="padding:12px 16px">
+          <div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid #2e2828"><span style="color:#9a8f85;font-size:.85em">攻擊成功</span><span style="color:#4ade80;font-size:.85em;font-weight:700">+30</span></div>
+          <div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid #2e2828"><span style="color:#9a8f85;font-size:.85em">智力</span><span style="color:#4ade80;font-size:.85em;font-weight:700">+20</span></div>
+          <div style="display:flex;justify-content:space-between;padding:5px 0"><span style="color:#9a8f85;font-size:.85em">魔攻</span><span style="color:#4ade80;font-size:.85em;font-weight:700">+50</span></div>
+        </div>
+      </div>
+      <div style="background:#0a1220;border:1px solid #1a4a7a;border-radius:8px;overflow:hidden">
+        <div style="background:#0a1a2e;padding:10px 16px;border-bottom:1px solid #1a4a7a;display:flex;align-items:center;gap:8px">
+          <span style="font-size:1em">🛡️</span>
+          <span style="color:#4a9eff;font-weight:700;font-size:.9em">聖晶之鎧</span>
+          <span style="margin-left:auto;background:#1a4a7a;color:#4a9eff;border-radius:3px;padding:1px 7px;font-size:.75em">防具</span>
+        </div>
+        <div style="padding:12px 16px">
+          <div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid #2e2828"><span style="color:#9a8f85;font-size:.85em">防禦</span><span style="color:#ff6b6b;font-size:.85em;font-weight:700">-100</span></div>
+          <div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid #2e2828"><span style="color:#9a8f85;font-size:.85em">魔防</span><span style="color:#4ade80;font-size:.85em;font-weight:700">+200</span></div>
+          <div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid #2e2828"><span style="color:#9a8f85;font-size:.85em">HP</span><span style="color:#4ade80;font-size:.85em;font-weight:700">+3,000</span></div>
+          <div style="display:flex;justify-content:space-between;padding:5px 0"><span style="color:#9a8f85;font-size:.85em">MP</span><span style="color:#4ade80;font-size:.85em;font-weight:700">+1,000</span></div>
+        </div>
+      </div>
+      <div style="background:#0a1a0a;border:1px solid #1a4a1a;border-radius:8px;overflow:hidden">
+        <div style="background:#0a1e0a;padding:10px 16px;border-bottom:1px solid #1a4a1a;display:flex;align-items:center;gap:8px">
+          <span style="font-size:1em">🌿</span>
+          <span style="color:#4ade80;font-weight:700;font-size:.9em">叢林之鎧</span>
+          <span style="margin-left:auto;background:#1a4a1a;color:#4ade80;border-radius:3px;padding:1px 7px;font-size:.75em">防具</span>
+        </div>
+        <div style="padding:12px 16px">
+          <div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid #2e2828"><span style="color:#9a8f85;font-size:.85em">防禦</span><span style="color:#ff6b6b;font-size:.85em;font-weight:700">-100</span></div>
+          <div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid #2e2828"><span style="color:#9a8f85;font-size:.85em">魔防</span><span style="color:#4ade80;font-size:.85em;font-weight:700">+200</span></div>
+          <div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid #2e2828"><span style="color:#9a8f85;font-size:.85em">力量</span><span style="color:#4ade80;font-size:.85em;font-weight:700">+20</span></div>
+          <div style="display:flex;justify-content:space-between;padding:5px 0"><span style="color:#9a8f85;font-size:.85em">智力</span><span style="color:#4ade80;font-size:.85em;font-weight:700">+20</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
     <div class="feature-nav-btns">
     <a href="feature-03.html" class="btn-outline">← 職業之力介紹</a>
     <a href="feature-07.html" class="btn-outline">威望系統 →</a>
@@ -246,6 +377,20 @@
     © 2026 爽玩天堂 · 版權所有<br>
   </div>
 </footer>
+<script>
+function switchPetTab(btn) {
+  document.querySelectorAll('.pet-tab-btn').forEach(function(b) {
+    b.style.background = '#131010';
+    b.style.color = '#9a8f85';
+    b.style.borderBottom = '3px solid transparent';
+    document.getElementById(b.dataset.tab).style.display = 'none';
+  });
+  btn.style.background = '#1a1508';
+  btn.style.color = '#c9a96e';
+  btn.style.borderBottom = '3px solid #c9a96e';
+  document.getElementById(btn.dataset.tab).style.display = 'block';
+}
+</script>
 <script src="main.js"></script>
 <button id="backToTop" title="回到頂部">&#8679;</button>
 </body>
