@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>爽玩天堂 - 轉職／轉換武器服務</title>
+<link rel="preconnect" href="https://telegraph-image-1n0.pages.dev" crossorigin>
+<link rel="dns-prefetch" href="https://telegraph-image-1n0.pages.dev">
+<link rel="stylesheet" href="style.css">
+<style>
+  body { background-image:url('https://telegraph-image-1n0.pages.dev/file/AgACAgUAAyEGAAS3SV8sAAIDxWoVMXV9s1y1wnne5ywMsTs_ydDeAALhDmsbhZOoVNGs1nQuD8M-AQADAgADeQADOwQ.jpg');background-size:cover;background-position:center center;background-attachment:fixed; }
+  .section     { background:rgba(6,9,16,0.82)  !important; }
+  .section-alt { background:rgba(15,12,12,0.88) !important; }
+
+  /* ── 頁面容器 ── */
+  .cc-wrap { max-width:860px; margin:0 auto; padding-bottom:80px; }
+
+  /* ── 副標題橫幅 ── */
+  .cc-eyebrow {
+    text-align:center; margin-bottom:40px;
+    padding:22px 28px;
+    background:linear-gradient(135deg,rgba(201,160,64,.08),rgba(201,160,64,.03));
+    border:1px solid rgba(201,160,64,.25); border-radius:14px;
+    position:relative; overflow:hidden;
+  }
+  .cc-eyebrow::before {
+    content:''; position:absolute; inset:0;
+    background:linear-gradient(90deg,transparent,rgba(201,160,64,.06),transparent);
+    animation:shimmer 3s ease-in-out infinite;
+  }
+  @keyframes shimmer { 0%,100%{opacity:0} 50%{opacity:1} }
+  .cc-eyebrow-icon { font-size:2rem; margin-bottom:8px; }
+  .cc-eyebrow-title { font-size:1.15rem; font-weight:800; letter-spacing:3px; color:#d4af37; }
+  .cc-eyebrow-sub { font-size:.8rem; color:rgba(212,175,55,.65); letter-spacing:1px; margin-top:4px; }
+
+  /* ── 方案卡片列 ── */
+  .cc-plans { display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-bottom:32px; }
+  @media(max-width:640px){ .cc-plans{ grid-template-columns:1fr; } }
+
+  .cc-plan {
+    background:rgba(10,12,20,0.96);
+    border:1px solid rgba(201,160,64,.2);
+    border-radius:16px; padding:28px 24px;
+    position:relative; overflow:hidden;
+    transition:border-color .25s, box-shadow .25s;
+  }
+  .cc-plan:hover { border-color:rgba(201,160,64,.5); box-shadow:0 8px 32px rgba(201,160,64,.1); }
+
+  /* 推薦方案特殊樣式 */
+  .cc-plan.recommended {
+    border-color:rgba(201,160,64,.5);
+    background:linear-gradient(135deg,rgba(14,12,6,0.98),rgba(10,12,20,0.98));
+    box-shadow:0 0 30px rgba(201,160,64,.12);
+  }
+  .cc-plan.recommended::before {
+    content:''; position:absolute; top:0; left:0; right:0; height:2px;
+    background:linear-gradient(90deg,transparent,#d4af37,transparent);
+  }
+
+  /* 推薦徽章 */
+  .cc-badge-rec {
+    position:absolute; top:14px; right:14px;
+    background:linear-gradient(135deg,#c9a040,#d4af37);
+    color:#000; font-size:.62rem; font-weight:900;
+    padding:3px 10px; border-radius:20px; letter-spacing:1.5px;
+    box-shadow:0 0 12px rgba(212,175,55,.4);
+  }
+
+  .cc-plan-num { font-size:.65rem; font-weight:700; letter-spacing:2px; color:rgba(212,175,55,.6); margin-bottom:8px; }
+  .cc-plan-title { font-size:1.2rem; font-weight:900; color:#f0e0a0; letter-spacing:2px; margin-bottom:6px; }
+  .cc-plan-price {
+    display:inline-block;
+    font-size:2rem; font-weight:900;
+    background:linear-gradient(135deg,#d4af37,#f0d080);
+    -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+    margin-bottom:20px; line-height:1;
+  }
+  .cc-plan-price span { font-size:1rem; -webkit-text-fill-color:#d4af37; opacity:.7; margin-left:2px; }
+
+  /* 分隔線 */
+  .cc-divider { height:1px; background:linear-gradient(90deg,transparent,rgba(201,160,64,.25),transparent); margin:16px 0; }
+
+  /* 項目列表 */
+  .cc-items { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:10px; }
+  .cc-item {
+    display:flex; align-items:flex-start; gap:10px;
+    font-size:.85rem; color:#c8c0b0; line-height:1.6;
+  }
+  .cc-item-dot {
+    width:6px; height:6px; border-radius:50%;
+    background:#d4af37; flex-shrink:0; margin-top:7px;
+  }
+  .cc-item strong { color:#f0d080; }
+
+  /* 注意事項例子區塊 */
+  .cc-note {
+    margin-top:8px; padding:10px 14px;
+    background:rgba(201,160,64,.05);
+    border-left:2px solid rgba(201,160,64,.35);
+    border-radius:0 6px 6px 0;
+    font-size:.76rem; color:rgba(200,192,176,.75); line-height:1.8;
+  }
+  .cc-note em { color:#d4af37; font-style:normal; }
+
+  /* 警示欄 */
+  .cc-warning {
+    background:rgba(255,80,0,.06);
+    border:1px solid rgba(255,100,30,.2);
+    border-radius:10px; padding:16px 20px;
+    font-size:.82rem; color:#e0a080; line-height:1.8;
+    margin-bottom:28px;
+  }
+  .cc-warning-title { font-weight:800; color:#ff9060; margin-bottom:6px; font-size:.88rem; }
+
+  /* CTA */
+  .cc-cta {
+    text-align:center; padding:32px 24px;
+    background:rgba(8,18,14,0.96);
+    border:1px solid rgba(6,199,85,.25);
+    border-radius:16px;
+  }
+  .cc-cta-title { font-size:1rem; font-weight:700; color:#4ade80; letter-spacing:2px; margin-bottom:8px; }
+  .cc-cta-sub { font-size:.8rem; color:rgba(74,222,128,.65); margin-bottom:20px; }
+  .cc-cta-btn {
+    display:inline-block; background:#06c755; color:#fff;
+    padding:14px 36px; border-radius:10px; text-decoration:none;
+    font-weight:900; font-size:1rem; letter-spacing:1px;
+    box-shadow:0 4px 20px rgba(6,199,85,.35);
+    transition:box-shadow .2s, filter .2s;
+  }
+  .cc-cta-btn:hover { box-shadow:0 0 28px rgba(6,199,85,.55); filter:brightness(1.1); }
+</style>
+</head>
+<body>
+
+<nav class="topnav"><a class="topnav-logo" href="index.html">⚔️ 爽玩天堂</a><div class="topnav-sep"></div><div class="topnav-links" id="navLinks"><a class="topnav-link" href="index.html">首頁</a><a class="topnav-link" href="events-list.html">活動介紹</a><a class="topnav-link" href="features.html">遊戲特色</a><a class="topnav-link" href="items.html">裝備與道具</a><a class="topnav-link" href="boss.html">BOSS介紹</a><a class="topnav-link" href="maps.html">地圖特殊掉落</a><a class="topnav-link" href="download.html">檔案下載</a><a class="topnav-link" href="rates.html">版本倍率</a><a class="topnav-link" href="promote.html">推文與直播</a><div class="topnav-dropdown"><a class="topnav-link">遊戲規章 ▾</a><div class="dropdown-menu"><a href="rules.html">伺服器規章</a><a href="disclaimer.html">免責聲明</a><a href="anti-cheat.html">防作弊聲明</a></div></div><div class="topnav-dropdown"><a class="topnav-link">聯絡我們 ▾</a><div class="dropdown-menu"><a href="https://line.me/ti/g2/RXF5-vodTEcXp_iqPF8wcDh3Wnxxrd4hpo_RNQ?utm_source=invitation&utm_medium=link_copy&utm_campaign=default" target="_blank">LINE 官方社群</a><a href="https://lin.ee/Otc2gGk" target="_blank">LINE 官方</a></div></div><a class="topnav-link" href="search.html" style="color:var(--pink);font-weight:bold">🔍 搜尋</a></div><div class="topnav-right"><a class="topnav-line-btn" href="https://lin.ee/TlneDmQ" target="_blank">LINE 客服</a></div><div class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')"><span></span><span></span><span></span></div></nav>
+
+<div class="float-sidebar"><button class="float-btn gift" data-modal="modal-gift"><span class="fb-icon">🎁</span><span class="fb-label">申請禮包</span></button><button class="float-btn line-btn" data-modal="modal-line"><span class="fb-icon"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/4/41/LINE_logo.svg" alt="LINE"></span><span class="fb-label">LINE</span></button></div>
+
+<div class="float-modal" id="modal-gift"><div class="float-modal-box"><span class="modal-close">✕</span><div class="modal-title">🎁 預約LINE禮包</div><div class="modal-body"><p>▸ 煉獄耳環<br>▸ 名譽貨幣【刻印】× 100<br>▸ 巧克力蛋糕【刻印】× 100<br>▸ 永久巧克力（永久三水）<br>▸ 永久名譽貨幣（永久三水）<br>▸ 象牙塔治癒藥水 × 10000<br><br><strong>加入 LINE 官方社群後私訊管理員即可領取。</strong></p></div><a class="modal-btn" href="https://lin.ee/TlneDmQ" target="_blank">加入 LINE 申請禮包</a></div></div>
+<div class="float-modal" id="modal-line"><div class="float-modal-box"><span class="modal-close">✕</span><div class="modal-title">💬 LINE 聯絡方式</div><div class="modal-body" style="text-align:center"><img loading="lazy" src="https://telegraph-image-1n0.pages.dev/file/AgACAgUAAyEGAAS3SV8sAAIDw2oVJZ2FdyRNX0Pr_KA7NJhHWUfUAALJDmsbhZOoVMSfPhUx5GY7AQADAgADeAADOwQ.png" alt="LINE QR Code" style="width:150px;height:150px;margin:0 auto 12px;display:block;border-radius:8px;"><p style="color:var(--text);font-size:.9em;margin:0">私訊小編幫您開單^^<br>給您最尊榮的服務</p></div><a class="modal-btn" href="https://line.me/ti/g2/RXF5-vodTEcXp_iqPF8wcDh3Wnxxrd4hpo_RNQ?utm_source=invitation&utm_medium=link_copy&utm_campaign=default" target="_blank">加入 LINE 官方社群</a></div></div>
+
+<!-- Hero -->
+<div class="hero" style="height:220px">
+  <div class="hero-bg" style="background:linear-gradient(135deg,#0a0608,#08100a);"></div>
+  <div class="hero-content">
+    <div class="hero-badge">SERVICE</div>
+    <h1 class="hero-title"><span style="font-size:2rem">🔄 轉職／轉換武器服務</span></h1>
+    <p class="hero-tagline">重新出發・技能裝備完整對應</p>
+  </div>
+</div>
+
+<div class="container" style="padding-top:56px">
+  <div class="cc-wrap">
+
+    <!-- 副標題 -->
+    <div class="cc-eyebrow">
+      <div class="cc-eyebrow-icon">🔄</div>
+      <div class="cc-eyebrow-title">轉職方案內容</div>
+      <div class="cc-eyebrow-sub">選擇適合你的方案，聯繫客服即可申請</div>
+    </div>
+
+    <!-- 方案卡片 -->
+    <div class="cc-plans">
+
+      <!-- 方案一 -->
+      <div class="cc-plan">
+        <div class="cc-plan-num">PLAN 01</div>
+        <div class="cc-plan-title">簡易轉職</div>
+        <div class="cc-plan-price">1,500<span>$</span></div>
+        <div class="cc-divider"></div>
+        <ul class="cc-items">
+          <li class="cc-item"><div class="cc-item-dot"></div><div>純粹轉換職業，<strong>等級不變</strong></div></li>
+          <li class="cc-item"><div class="cc-item-dot"></div><div><strong>經驗值歸零</strong></div></li>
+          <li class="cc-item"><div class="cc-item-dot"></div><div><strong>技能全數清空</strong>，需自行重新習得</div></li>
+          <li class="cc-item"><div class="cc-item-dot"></div><div><strong>裝備保持不變</strong>，無對應替換</div></li>
+        </ul>
+      </div>
+
+      <!-- 方案二（推薦） -->
+      <div class="cc-plan recommended">
+        <div class="cc-badge-rec">✦ 推薦</div>
+        <div class="cc-plan-num">PLAN 02</div>
+        <div class="cc-plan-title">完整轉職</div>
+        <div class="cc-plan-price">3,000<span>$</span></div>
+        <div class="cc-divider"></div>
+        <ul class="cc-items">
+          <li class="cc-item"><div class="cc-item-dot"></div><div><strong>等級不變</strong>、<strong>經驗歸零</strong></div></li>
+          <li class="cc-item">
+            <div class="cc-item-dot"></div>
+            <div>
+              <strong>技能對應變更</strong>
+              <div class="cc-note">
+                例：黑妖 → 妖精<br>
+                身上技能「<em>雙重破壞</em>」→ 轉職後習得「<em>三重矢（非水晶）</em>」
+              </div>
+            </div>
+          </li>
+          <li class="cc-item">
+            <div class="cc-item-dot"></div>
+            <div>
+              <strong>裝備對應變更</strong>
+              <div class="cc-note">
+                例：黑妖 → 妖精，身上武器為「<em>+7 雙刀</em>」<br>
+                → 轉職後獲得「<em>+7 弓</em>」<br><br>
+                特殊裝備如力量系裝備，可將「<em>力量</em>」屬性轉換為「<em>敏捷</em>」等對應屬性
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- 注意事項 -->
+    <div class="cc-warning">
+      <div class="cc-warning-title">⚠️ 申請注意事項</div>
+      · 轉職前請務必先聯繫官方 LINE 客服確認方案細節<br>
+      · 技能與裝備對應變更以官方評估為準，特殊情況將另行溝通<br>
+      · 贊助完成後方可進行轉職，恕不接受事後退款
+    </div>
+
+    <!-- CTA -->
+    <div class="cc-cta">
+      <div class="cc-cta-title">💬 立即申請轉職服務</div>
+      <div class="cc-cta-sub">加入官方 LINE，告知客服您的角色資訊與方案需求</div>
+      <a href="https://lin.ee/TlneDmQ" target="_blank" class="cc-cta-btn">加入 LINE 申請轉職</a>
+    </div>
+
+    <div id="eventNav" style="margin-top:32px"></div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-col-title">爽玩天堂</div>
+      <ul class="footer-links">
+        <li><a href="index.html">首頁</a></li>
+        <li><a href="events.html">活動介紹</a></li>
+        <li><a href="download.html">檔案下載</a></li>
+        <li><a href="rates.html">版本倍率</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">遊戲資訊</div>
+      <ul class="footer-links">
+        <li><a href="features.html">遊戲特色</a></li>
+        <li><a href="boss.html">BOSS介紹</a></li>
+        <li><a href="maps.html">特殊地圖掉落</a></li>
+        <li><a href="items.html">道具介紹</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">聯絡我們</div>
+      <ul class="footer-links">
+        <li><a href="#" onclick="document.getElementById('modal-line').classList.add('open');return false;">LINE 官方社群</a></li>
+        <li><a href="promote.html">推文與直播</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-copy">© 2026 爽玩天堂 · 版權所有</div>
+</footer>
+<script src="main.js"></script>
+<script src="events-data.js"></script>
+<button id="backToTop" title="回到頂部">&#8679;</button>
+</body>
+</html>
