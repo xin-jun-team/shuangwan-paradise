@@ -150,14 +150,14 @@
     {
       "title": "職業之力介紹",
       "category": "系統說明",
-      "url": "feature-02.html",
+      "url": "feature-03.html",
       "description": "各職業專屬力量技能介紹。",
       "content": "職業 之力 騎士 法師 妖精 黑暗精靈 龍騎 特殊技能 力量 效果"
     },
     {
       "title": "職業特色技能",
       "category": "系統說明",
-      "url": "feature-03.html",
+      "url": "feature-02.html",
       "description": "職業特色技能詳解。",
       "content": "技能 職業特色 騎士 法師 妖精 精靈 龍騎 主動 被動 效果 冷卻"
     },
