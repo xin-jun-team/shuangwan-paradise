@@ -28,6 +28,8 @@ function _loadEvents(callback) {
     .catch(function(){
       // fetch 失敗時使用備用資料（本地預覽用）
       EVENTS = [
+        { url:'event-worldcup.html',     tag:'活動', title:'⚽ 世足聯歡慶',           desc:'新增世足球員梅西・C羅・活動BOSS世足球・彩票兌換豐厚好禮・06/20維修後～07/20維修前', date:'2026-06-20', pin:true },
+        { url:'event-worldcup-bet.html', tag:'活動', title:'⚽ 世足2026競猜活動',     desc:'押注贏藍鑽・冠亞軍最高130倍・單場勝平負猜分賠率豐厚・06/20維修後～07/20維修前',       date:'2026-06-20', pin:true },
         { url:'event-class-change.html', tag:'服務', title:'🔄 轉職／轉換武器服務', desc:'簡易轉職 1500$ · 完整轉職 3000$，技能裝備對應變更，聯絡客服即可申請', date:'2026-06-11', pin:true },
         { url:'event-dragon-boat.html', tag:'活動', title:'🐙消滅海怪🐙 拯救屈原', desc:'端午節活動・消滅海怪・討伐屈原的魂魄・活動時間 06/01~06/30', date:'2026-06-01', pin:true },
         { url:'events.html',      tag:'活動', title:'開局紅變＋紅娃活動',           desc:'登入就送英雄變身＋娃娃，開局加碼稀有＋7武器，自帶魔武！！練功必備', date:'2026-05-15', pin:true },

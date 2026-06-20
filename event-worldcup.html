@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>爽玩天堂 - 世足聯歡慶</title>
+<link rel="preconnect" href="https://telegraph-image-1n0.pages.dev" crossorigin>
+<link rel="dns-prefetch" href="https://telegraph-image-1n0.pages.dev">
+<link rel="stylesheet" href="style.css">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700;900&display=swap');
+
+  :root {
+    --gold: #f0c040;
+    --gold-dark: #a87820;
+    --gold-light: #ffe88a;
+    --bg-dark: #0a0500;
+    --border-gold: #7a5500;
+    --text-main: #f5e6c0;
+    --text-dim: #b89a60;
+    --green: #4caf50;
+    --green-dark: #2e7d32;
+    --green-glow: rgba(76,175,80,0.6);
+    --teal: #26a69a;
+    --teal-glow: rgba(38,166,154,0.6);
+    --red: #ef5350;
+    --red-glow: rgba(239,83,80,0.6);
+    --orange: #ff8c00;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background-image: url('https://telegraph-image-1n0.pages.dev/file/AgACAgUAAyEGAAS3SV8sAAID0Woni2QZuLQsNCoLMIpYmKSBKWU0AAJfEmsbTFRAVUvfRxCzivwvAQADAgADeQADOwQ.jpg') !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-attachment: fixed !important;
+    font-family: 'Noto Serif TC', '微軟正黑體', serif;
+    color: var(--text-main);
+    min-height: 100vh;
+    padding: 44px 0 60px 0;
+  }
+
+  .section     { background:rgba(6,9,16,0.82)  !important; }
+  .section-alt { background:rgba(15,12,12,0.88) !important; }
+
+  .main-banner {
+    position: relative;
+    text-align: center;
+    padding: 50px 20px 40px;
+    background: linear-gradient(180deg, rgba(0,26,10,0.92) 0%, rgba(10,5,0,0.92) 100%);
+    border-bottom: 3px solid var(--border-gold);
+    overflow: hidden;
+  }
+  .main-banner::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(0,160,80,0.2) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .deco-left, .deco-right {
+    position: absolute;
+    top: 50%; transform: translateY(-50%);
+    font-size: 80px;
+    opacity: 0.1;
+  }
+  .deco-left { left: 20px; }
+  .deco-right { right: 20px; transform: translateY(-50%) scaleX(-1); }
+
+  .month-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #1b5e20, #2e7d32);
+    border: 2px solid var(--green);
+    border-radius: 4px;
+    padding: 4px 20px;
+    font-size: 14px;
+    letter-spacing: 6px;
+    color: #a5d6a7;
+    margin-bottom: 12px;
+    text-shadow: 0 0 10px var(--green-glow);
+  }
+  .main-title {
+    font-size: clamp(26px, 5vw, 50px);
+    font-weight: 900;
+    color: var(--green);
+    text-shadow: 0 0 20px var(--green-glow), 2px 2px 0 #001500;
+    letter-spacing: 4px;
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+  .main-subtitle {
+    font-size: clamp(12px, 2vw, 16px);
+    color: var(--text-dim);
+    letter-spacing: 3px;
+    margin-bottom: 24px;
+  }
+  .time-pill {
+    display: inline-block;
+    background: rgba(76,175,80,0.12);
+    border: 1px solid #388e3c;
+    border-radius: 20px;
+    padding: 6px 20px;
+    font-size: 14px;
+    color: #a5d6a7;
+    letter-spacing: 1px;
+  }
+  .divider-ornament {
+    display: flex; align-items: center; justify-content: center; gap: 12px;
+    margin: 20px auto 0;
+    max-width: 500px;
+  }
+  .divider-ornament span { color: var(--green); font-size: 18px; }
+  .divider-ornament .line { flex: 1; height: 1px; background: linear-gradient(90deg, transparent, #2e7d32, transparent); }
+
+  .container { max-width: 1000px; margin: 0 auto; padding: 0 16px; }
+
+  .warning-bar {
+    margin: 30px auto;
+    max-width: 900px;
+    background: linear-gradient(135deg, rgba(26,0,0,0.9), rgba(15,5,0,0.9));
+    border: 1px solid #8b1a1a;
+    border-left: 4px solid var(--red);
+    border-radius: 6px;
+    padding: 16px 22px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  .warning-bar .icon { font-size: 28px; flex-shrink: 0; line-height: 1.3; }
+  .warning-bar .title { color: var(--red); font-weight: bold; font-size: 15px; margin-bottom: 6px; text-shadow: 0 0 8px var(--red-glow); }
+  .warning-bar .sub { color: #ff8a80; font-size: 13px; }
+  .warning-bar .items { color: var(--text-dim); font-size: 13px; margin-top: 4px; line-height: 1.8; }
+
+  .section-header {
+    text-align: center;
+    margin: 44px 0 24px;
+  }
+  .section-header h2 {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 5px;
+  }
+  .section-header h2.green { color: var(--green); text-shadow: 0 0 12px var(--green-glow); }
+  .section-header h2.teal  { color: var(--teal);  text-shadow: 0 0 12px var(--teal-glow); }
+  .section-header h2.gold  { color: var(--gold);  text-shadow: 0 0 12px rgba(240,192,64,0.6); }
+  .section-header h2.red   { color: var(--red);   text-shadow: 0 0 12px var(--red-glow); }
+  .section-header .under-line {
+    width: 220px; height: 2px; margin: 10px auto 0;
+  }
+  .section-header h2.green + .under-line { background: linear-gradient(90deg, transparent, var(--green), transparent); }
+  .section-header h2.teal  + .under-line { background: linear-gradient(90deg, transparent, var(--teal),  transparent); }
+  .section-header h2.gold  + .under-line { background: linear-gradient(90deg, transparent, var(--gold),  transparent); }
+  .section-header h2.red   + .under-line { background: linear-gradient(90deg, transparent, var(--red),   transparent); }
+
+  .area-bar {
+    max-width: 900px;
+    margin: 0 auto 24px;
+    background: linear-gradient(135deg, rgba(0,26,8,0.9), rgba(0,15,5,0.9));
+    border: 1px solid #1b5e20;
+    border-radius: 6px;
+    padding: 14px 20px;
+    font-size: 13.5px;
+    line-height: 1.9;
+    color: var(--text-main);
+  }
+
+  .mob-cards { max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+  .mob-cards-row { max-width: 900px; margin: 0 auto; display: flex; flex-direction: row; gap: 20px; flex-wrap: wrap; }
+  .mob-cards-row .mob-card { flex: 1; min-width: 260px; }
+
+  .mob-card {
+    background: linear-gradient(160deg, #0d1000 0%, #080c00 100%);
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.6);
+  }
+  .mob-card::before {
+    content: '';
+    position: absolute; inset: 0;
+    border-radius: 8px;
+    border: 1px solid;
+    pointer-events: none;
+  }
+  .mob-card.teal { background: linear-gradient(160deg, #001a18 0%, #000f0d 100%); }
+  .mob-card.teal::before { border-color: #004d40; }
+  .mob-card.red   { background: linear-gradient(160deg, #1a0000 0%, #0f0000 100%); }
+  .mob-card.red::before   { border-color: #7f0000; }
+
+  .mob-header {
+    padding: 12px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-weight: bold;
+    font-size: 15px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .mob-header.teal { color: #80cbc4; background: rgba(0,77,64,0.5); }
+  .mob-header.red  { color: #ef9a9a; background: rgba(100,0,0,0.5); }
+  .mob-header .loc-badge {
+    font-size: 12px;
+    font-weight: normal;
+    padding: 2px 12px;
+    border-radius: 12px;
+    border: 1px solid;
+    white-space: nowrap;
+  }
+  .mob-header.teal .loc-badge { color: #4db6ac; border-color: #00695c; }
+  .mob-header.red  .loc-badge { color: #ef9a9a; border-color: #7f0000; }
+
+  .mob-body { padding: 16px 18px; }
+  .drop-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 10px;
+    font-size: 13px;
+  }
+  .drop-item {
+    padding: 8px 12px;
+    border-radius: 4px;
+    background: rgba(255,255,255,0.02);
+    border-left: 2px solid transparent;
+    line-height: 1.6;
+  }
+  .drop-item .label {
+    display: block;
+    font-size: 11px;
+    letter-spacing: 2px;
+    margin-bottom: 4px;
+    font-weight: bold;
+  }
+  .drop-item.event    { border-left-color: var(--red); }
+  .drop-item.event    .label { color: var(--red); }
+  .drop-item.gem      { border-left-color: #42a5f5; }
+  .drop-item.gem      .label { color: #90caf9; }
+  .drop-item.skill    { border-left-color: #ab47bc; }
+  .drop-item.skill    .label { color: #ce93d8; }
+  .drop-item.scroll   { border-left-color: var(--green); }
+  .drop-item.scroll   .label { color: #a5d6a7; }
+  .drop-item.box      { border-left-color: var(--orange); }
+  .drop-item.box      .label { color: #ffcc80; }
+  .drop-item.mat      { border-left-color: #8d6e63; }
+  .drop-item.mat      .label { color: #bcaaa4; }
+  .drop-item.currency { border-left-color: var(--gold); }
+  .drop-item.currency .label { color: var(--gold); }
+
+  .belt-card {
+    max-width: 900px;
+    margin: 0 auto;
+    background: linear-gradient(160deg, rgba(0,26,8,0.92), rgba(0,15,5,0.92));
+    border: 1px solid #2e7d32;
+    border-top: 3px solid var(--green);
+    border-radius: 8px;
+    padding: 20px 24px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.5), 0 0 20px rgba(76,175,80,0.06);
+    font-size: 14px;
+    line-height: 1.8;
+    color: var(--text-main);
+  }
+  .belt-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #a5d6a7;
+    margin-bottom: 10px;
+    text-shadow: 0 0 8px var(--green-glow);
+  }
+
+  .npc-card {
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #1b5e20;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  }
+  .npc-header-bar {
+    background: rgba(27,94,32,0.5);
+    padding: 12px 20px;
+    font-size: 13px;
+    color: #a5d6a7;
+    letter-spacing: 1px;
+    text-align: center;
+    border-bottom: 1px solid #2e7d32;
+  }
+  .npc-card table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13.5px;
+    background: rgba(5,13,5,0.95);
+  }
+  .npc-card thead tr { background: rgba(46,125,50,0.2); }
+  .npc-card thead th {
+    padding: 11px 14px;
+    color: var(--gold);
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 12px;
+    border-bottom: 1px solid #2e7d32;
+    text-align: left;
+  }
+  .npc-card tbody tr { border-bottom: 1px solid rgba(46,125,50,0.15); transition: background 0.15s; }
+  .npc-card tbody tr:hover { background: rgba(76,175,80,0.05); }
+  .npc-card tbody tr.highlight { background: rgba(240,192,64,0.05) !important; }
+  .npc-card tbody td { padding: 9px 14px; color: var(--text-main); }
+  .npc-card tbody td.qty-center { text-align: center; font-weight: bold; color: var(--teal); }
+  .npc-card tbody td.qty-red { text-align: center; font-weight: bold; color: var(--red) !important; text-shadow: 0 0 6px var(--red-glow); }
+  .npc-card tbody td.qty-gold { text-align: center; font-weight: bold; color: var(--gold) !important; }
+
+  .boss-warn {
+    max-width: 900px;
+    margin: 16px auto 0;
+    background: rgba(100,0,0,0.18);
+    border: 1px solid #7f0000;
+    border-left: 4px solid var(--red);
+    border-radius: 6px;
+    padding: 12px 18px;
+    font-size: 13px;
+    color: #ef9a9a;
+    line-height: 1.8;
+  }
+
+  .ev-particles { position: fixed; inset: 0; pointer-events: none; overflow: hidden; z-index: 0; }
+  .ev-particle {
+    position: absolute;
+    border-radius: 50%;
+    animation: ev-float-up linear infinite;
+    opacity: 0;
+  }
+  @keyframes ev-float-up {
+    0%   { transform: translateY(100vh); opacity: 0; }
+    10%  { opacity: 0.5; }
+    90%  { opacity: 0.2; }
+    100% { transform: translateY(-100px); opacity: 0; }
+  }
+
+  .footer-ornament {
+    text-align: center;
+    margin-top: 60px;
+    padding: 30px;
+    border-top: 1px solid rgba(46,125,50,0.25);
+    color: #f5e6c0;
+    font-size: 12px;
+    letter-spacing: 2px;
+    line-height: 2;
+    background: rgba(10,5,0,0.85);
+  }
+
+  @media (max-width: 640px) {
+    .drop-grid { grid-template-columns: 1fr; }
+    .main-title { font-size: 24px; }
+    .mob-cards-row { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+<nav class="topnav"><a class="topnav-logo" href="index.html">⚔️ 爽玩天堂</a><div class="topnav-sep"></div><div class="topnav-links" id="navLinks"><a class="topnav-link" href="index.html">首頁</a><a class="topnav-link" href="events-list.html">活動介紹</a><a class="topnav-link" href="features.html">遊戲特色</a><a class="topnav-link" href="items.html">裝備與道具</a><a class="topnav-link" href="boss.html">BOSS介紹</a><a class="topnav-link" href="maps.html">地圖特殊掉落</a><a class="topnav-link" href="download.html">檔案下載</a><a class="topnav-link" href="rates.html">版本倍率</a><a class="topnav-link" href="promote.html">推文與直播</a><div class="topnav-dropdown"><a class="topnav-link">遊戲規章 ▾</a><div class="dropdown-menu"><a href="rules.html">伺服器規章</a><a href="disclaimer.html">免責聲明</a><a href="anti-cheat.html">防作弊聲明</a></div></div><div class="topnav-dropdown"><a class="topnav-link">聯絡我們 ▾</a><div class="dropdown-menu"><a href="https://line.me/ti/g2/RXF5-vodTEcXp_iqPF8wcDh3Wnxxrd4hpo_RNQ?utm_source=invitation&utm_medium=link_copy&utm_campaign=default" target="_blank">LINE 官方社群</a><a href="https://lin.ee/Otc2gGk" target="_blank">LINE 官方</a></div></div><a class="topnav-link" href="search.html" style="color:var(--pink);font-weight:bold">🔍 搜尋</a></div><div class="topnav-right"><a class="topnav-line-btn" href="https://lin.ee/TlneDmQ" target="_blank">LINE 客服</a></div><div class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')"><span></span><span></span><span></span></div></nav>
+
+<div class="float-sidebar"><button class="float-btn gift" data-modal="modal-gift"><span class="fb-icon">🎁</span><span class="fb-label">申請禮包</span></button><button class="float-btn line-btn" data-modal="modal-line"><span class="fb-icon"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/4/41/LINE_logo.svg" alt="LINE"></span><span class="fb-label">LINE</span></button></div>
+<div class="float-modal" id="modal-gift"><div class="float-modal-box"><span class="modal-close">✕</span><div class="modal-title">🎁 預約LINE禮包</div><div class="modal-body"><p>▸ 煉獄耳環<br>▸ 名譽貨幣【刻印】× 100<br>▸ 巧克力蛋糕【刻印】× 100<br>▸ 永久巧克力（永久三水）<br>▸ 永久名譽貨幣（永久三水）<br>▸ 象牙塔治癒藥水 × 10000<br><br><strong>加入 LINE 官方社群後私訊管理員即可領取。</strong></p></div><a class="modal-btn" href="https://lin.ee/TlneDmQ" target="_blank">加入 LINE 申請禮包</a></div></div>
+<div class="float-modal" id="modal-line"><div class="float-modal-box"><span class="modal-close">✕</span><div class="modal-title">💬 LINE 聯絡方式</div><div class="modal-body" style="text-align:center"><img loading="lazy" src="https://telegraph-image-1n0.pages.dev/file/AgACAgUAAyEGAAS3SV8sAAIDw2oVJZ2FdyRNX0Pr_KA7NJhHWUfUAALJDmsbhZOoVMSfPhUx5GY7AQADAgADeAADOwQ.png" alt="LINE QR Code" style="width:150px;height:150px;margin:0 auto 12px;display:block;border-radius:8px;"><p style="color:var(--text);font-size:.9em;margin:0">私訊小編幫您開單^^<br>給您最尊榮的服務</p></div><a class="modal-btn" href="https://line.me/ti/g2/RXF5-vodTEcXp_iqPF8wcDh3Wnxxrd4hpo_RNQ?utm_source=invitation&utm_medium=link_copy&utm_campaign=default" target="_blank">加入 LINE 官方社群</a></div></div>
+
+<div class="ev-particles" id="ev-particles"></div>
+
+<!-- ===== 主橫幅 ===== -->
+<div class="main-banner">
+  <div class="deco-left">⚽</div>
+  <div class="deco-right">⚽</div>
+  <div class="month-badge">2026 ‧ WORLD CUP ‧ 世足</div>
+  <h1 class="main-title">「世足聯歡慶」</h1>
+  <p class="main-subtitle">WORLD CUP 2026 CELEBRATION EVENT</p>
+  <div class="time-pill">⏰ 活動時間：06/20 維修後 ─ 07/20 維修前</div>
+  <div class="divider-ornament">
+    <div class="line"></div>
+    <span>◆</span><span>⚽</span><span>◆</span>
+    <div class="line"></div>
+  </div>
+</div>
+
+<!-- ===== 警告提示 ===== -->
+<div class="warning-bar" style="max-width:900px; margin:30px auto;">
+  <div class="icon">⚠️</div>
+  <div>
+    <div class="title">【重要提醒】活動結束道具移除說明</div>
+    <div class="items">
+      ❌ 世足入場券 ｜ ❌ 世足彩票 ｜ ❌ 世足金袋 ｜ ❌ 相關 NPC / 活動道具 / BOSS
+    </div>
+  </div>
+</div>
+
+<!-- ===== 球員登場 ===== -->
+<div class="section-header">
+  <h2 class="green">◈ 世足球員登場 ◈</h2>
+  <div class="under-line"></div>
+</div>
+
+<div class="area-bar">
+  梅西（🇦🇷 阿根廷）與 C羅（🇵🇹 葡萄牙）限時加入天堂世界，前往奇物商購買世足入場券即可進入活動場景挑戰。
+</div>
+
+<div class="mob-cards-row">
+  <div class="mob-card teal">
+    <div class="mob-header teal">
+      <span>⭐ 梅西・C羅（世足限定球員）</span>
+    </div>
+    <div class="mob-body">
+      <div class="drop-grid">
+        <div class="drop-item event"><span class="label">🎫 活動專屬</span>世足彩票 1–10</div>
+        <div class="drop-item currency"><span class="label">💰 貨幣</span>金幣 50–120</div>
+        <div class="drop-item gem"><span class="label">💎 寶石</span>紅寶石・藍寶石・綠寶石 各 1</div>
+        <div class="drop-item scroll"><span class="label">📜 卷軸</span>對盔甲施法的卷軸・對武器施法的卷軸 各 1</div>
+        <div class="drop-item mat"><span class="label">🛠️ 製作材料</span>高級製作秘笈・稀有製作秘笈 各 1</div>
+        <div class="drop-item box"><span class="label">📦 裝備寶箱</span>一般/高級 武器箱・防具箱・飾品箱 各 1</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 活動 BOSS ===== -->
+<div class="section-header">
+  <h2 class="red">◈ 活動 BOSS：世足球 ◈</h2>
+  <div class="under-line"></div>
+</div>
+
+<div class="mob-cards">
+  <div class="mob-card red">
+    <div class="mob-header red">
+      <span>👹 世足球（活動 BOSS）</span>
+      <span class="loc-badge">⏰ 8 小時重生</span>
+    </div>
+    <div class="mob-body">
+      <div class="drop-grid">
+        <div class="drop-item event"><span class="label">🎫 活動專屬</span>世足彩票 100–1000</div>
+        <div class="drop-item currency"><span class="label">💰 貨幣</span>金幣 5000–50000・藍鑽 1–50</div>
+        <div class="drop-item gem"><span class="label">💎 寶石</span>鑽石 1–3・紅/藍/綠寶石 1–5・品質鑽/紅/藍/綠寶石・高品質鑽/紅/藍/綠寶石 各1</div>
+        <div class="drop-item scroll"><span class="label">📜 卷軸 / 防爆</span>對盔甲/武器施法的卷軸 1–5・受祝福的對盔甲/武器施法的卷軸 各1・受詛咒的對盔甲/武器施法的卷軸 各1・詛咒的/一般的/祝福的 防爆卷軸 各1</div>
+        <div class="drop-item skill"><span class="label">📘 技能書</span>技術書(衝擊之暈)・魔法書(聖結界)・魔法書(王者之劍)・精靈水晶(三重矢)・黑暗精靈水晶(雙重破壞) 各1</div>
+        <div class="drop-item mat"><span class="label">🛠️ 材料其他</span>黑色血痕 1–10・少了刀刃的武器 1・六芒星升階石 1–10・戰馬雕像升級石 1–10・聖物成長藥劑 1–10・高級/稀有/英雄製作秘笈 各1</div>
+        <div class="drop-item box"><span class="label">📦 裝備寶箱</span>一般/高級/稀有 武器箱・防具箱・飾品箱 各1</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="boss-warn">
+  ⚠️ 世足球行蹤詭異、神出鬼沒，全地圖隨機現身！攻擊力恐怖，一個不留神即遭秒殺，見過牠的人十個有九個半倒地——擊敗牠的獎勵足以讓整個伺服器羨慕！
+</div>
+
+<!-- ===== 世足彩票兌換 ===== -->
+<div class="section-header">
+  <h2 class="gold">◈ 世足彩票・兌換世足金袋 ◈</h2>
+  <div class="under-line"></div>
+</div>
+
+<div class="npc-card">
+  <div class="npc-header-bar">※ 使用「世足彩票」開出以下獎勵，兌換世足金袋抽取好禮</div>
+  <table>
+    <thead><tr><th style="width:50%;">開出獎勵</th><th style="width:25%; text-align:center;">數量</th><th style="width:25%; text-align:center;">機率</th></tr></thead>
+    <tbody>
+      <tr><td>金幣</td><td class="qty-center">10萬–1000萬</td><td class="qty-gold">50%</td></tr>
+      <tr><td>藍鑽</td><td class="qty-center">10–500</td><td class="qty-center">10%</td></tr>
+      <tr><td>對盔甲施法的卷軸</td><td class="qty-center">1–5</td><td class="qty-center">10%</td></tr>
+      <tr><td>對武器施法的卷軸</td><td class="qty-center">1–5</td><td class="qty-center">10%</td></tr>
+      <tr><td>受祝福的對盔甲施法的卷軸 🔊全服公告</td><td class="qty-center">1–3</td><td class="qty-center">5%</td></tr>
+      <tr><td>受祝福的對武器施法的卷軸 🔊全服公告</td><td class="qty-center">1–3</td><td class="qty-center">5%</td></tr>
+      <tr><td>受詛咒的對盔甲施法的卷軸</td><td class="qty-center">1–3</td><td class="qty-center">5%</td></tr>
+      <tr><td>受詛咒的對武器施法的卷軸</td><td class="qty-center">1–3</td><td class="qty-center">5%</td></tr>
+      <tr><td>稀有變身卡寶箱 🔊全服公告</td><td class="qty-center">1–5</td><td class="qty-center">5%</td></tr>
+      <tr class="highlight"><td>英雄變身卡寶箱 🔊全服公告</td><td class="qty-center">1–2</td><td class="qty-gold">3%</td></tr>
+      <tr class="highlight"><td>傳說變身卡寶箱 🔊全服公告</td><td class="qty-center">1</td><td class="qty-red">1%</td></tr>
+      <tr class="highlight"><td>神話變身卡寶箱</td><td class="qty-center">1</td><td class="qty-red">0.01%</td></tr>
+      <tr><td>+3 光之英雄手環</td><td class="qty-center">1</td><td class="qty-red">0.05%</td></tr>
+      <tr><td>+4 光之英雄手環</td><td class="qty-center">1</td><td class="qty-red">0.05%</td></tr>
+      <tr><td>+3 光之防禦手環</td><td class="qty-center">1</td><td class="qty-red">0.05%</td></tr>
+      <tr><td>+4 光之防禦手環</td><td class="qty-center">1</td><td class="qty-red">0.05%</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ===== 活動贊助 ===== -->
+<div class="section-header">
+  <h2 class="teal">◈ 活動期間贊助優惠 ◈</h2>
+  <div class="under-line"></div>
+</div>
+
+<div class="belt-card">
+  <div class="belt-title">💎 世足活動限定贊助方案</div>
+  贊助 1,000 新台幣 = 黃金袋 × 10，詳情請私訊GM
+</div>
+
+<div class="footer-ornament">
+  <div style="font-size:18px; opacity:0.4; margin-bottom:8px;">◆ ◇ ◆</div>
+  以上活動內容最終解釋權歸主辦方所有<br>
+  如有任何疑問請聯繫遊戲客服
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-col-title">爽玩天堂</div>
+      <ul class="footer-links">
+        <li><a href="index.html">首頁</a></li>
+        <li><a href="events-list.html">活動介紹</a></li>
+        <li><a href="download.html">檔案下載</a></li>
+        <li><a href="rates.html">版本倍率</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">遊戲資訊</div>
+      <ul class="footer-links">
+        <li><a href="features.html">遊戲特色</a></li>
+        <li><a href="boss.html">BOSS介紹</a></li>
+        <li><a href="maps.html">特殊地圖掉落</a></li>
+        <li><a href="items.html">道具介紹</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">聯絡我們</div>
+      <ul class="footer-links">
+        <li><a href="#" onclick="document.getElementById('modal-line').classList.add('open');return false;">LINE 官方社群</a></li>
+        <li><a href="promote.html">推文與直播</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-copy">© 2026 爽玩天堂 · 版權所有</div>
+</footer>
+
+<script src="main.js"></script>
+<script src="events-data.js"></script>
+<script>
+(function(){
+  var c = document.getElementById('ev-particles');
+  for(var i=0;i<25;i++){
+    var p=document.createElement('div');
+    p.className='ev-particle';
+    p.style.left=Math.random()*100+'%';
+    p.style.width=p.style.height=(1+Math.random()*2)+'px';
+    p.style.animationDuration=(9+Math.random()*12)+'s';
+    p.style.animationDelay=(Math.random()*16)+'s';
+    var colors=['#4caf50','#a5d6a7','#80cbc4','#ffffff','#f0c040'];
+    p.style.background=colors[Math.floor(Math.random()*colors.length)];
+    c.appendChild(p);
+  }
+})();
+</script>
+<button id="backToTop" title="回到頂部">&#8679;</button>
+</body>
+</html>
