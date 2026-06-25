@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>爽玩天堂 - 💦沁涼消暑大作戰💦</title>
+<link rel="preconnect" href="https://telegraph-image-1n0.pages.dev" crossorigin>
+<link rel="dns-prefetch" href="https://telegraph-image-1n0.pages.dev">
+<link rel="stylesheet" href="style.css">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700;900&family=Oswald:wght@500;700&display=swap');
+
+  :root {
+    --ice: #00e5ff;
+    --ice-dark: #0097a7;
+    --ice-light: #b2ebf2;
+    --ice-glow: rgba(0,229,255,0.5);
+    --bg-dark: #040e18;
+    --bg-navy: #071a2e;
+    --border-ice: #0d4f6a;
+    --text-main: #e0f2f1;
+    --text-dim-ice: #78909c;
+    --gold: #ffd740;
+    --red: #ff5252;
+    --red-glow: rgba(255,82,82,0.5);
+    --orange: #ff9100;
+    --green: #69f0ae;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background-image: url('https://telegraph-image-1n0.pages.dev/file/AgACAgUAAyEGAAS3SV8sAAIDxWoVMXV9s1y1wnne5ywMsTs_ydDeAALhDmsbhZOoVNGs1nQuD8M-AQADAgADeQADOwQ.jpg') !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-attachment: fixed !important;
+    font-family: 'Noto Serif TC', '微軟正黑體', serif;
+    color: var(--text-main);
+    min-height: 100vh;
+    padding: 64px 0 60px 0;
+  }
+
+  .section     { background:rgba(6,9,16,0.82)  !important; }
+  .section-alt { background:rgba(15,12,12,0.88) !important; }
+
+  /* ===== 頂部橫幅 — 冰霜清涼 ===== */
+  .ev-banner {
+    position: relative;
+    text-align: center;
+    padding: 54px 20px 44px;
+    background: linear-gradient(180deg, #041820 0%, #071a2e 50%, #040e18 100%);
+    border-bottom: 3px solid var(--ice-dark);
+    overflow: hidden;
+  }
+  .ev-banner::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(0,229,255,0.15) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .ev-deco-left, .ev-deco-right {
+    position: absolute;
+    top: 50%; transform: translateY(-50%);
+    font-size: 70px;
+    opacity: 0.1;
+  }
+  .ev-deco-left { left: 20px; }
+  .ev-deco-right { right: 20px; }
+  .ev-ice-halo {
+    position: absolute;
+    top: -40px; left: 50%; transform: translateX(-50%);
+    width: 300px; height: 200px;
+    background: radial-gradient(ellipse at 50% 100%, rgba(0,229,255,0.12) 0%, transparent 70%);
+    pointer-events: none;
+    animation: ev-ice-pulse 3s ease-in-out infinite alternate;
+  }
+  @keyframes ev-ice-pulse {
+    0% { opacity: 0.5; }
+    100% { opacity: 1; }
+  }
+
+  .ev-month-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #006064, #00838f);
+    border: 2px solid var(--ice);
+    border-radius: 4px;
+    padding: 4px 22px;
+    font-size: 14px;
+    letter-spacing: 6px;
+    color: var(--ice-light);
+    margin-bottom: 12px;
+    text-shadow: 0 0 10px var(--ice-glow);
+    position: relative;
+  }
+  .ev-main-title {
+    font-size: clamp(26px, 5vw, 50px);
+    font-weight: 900;
+    color: #fff;
+    text-shadow: 0 0 30px var(--ice-glow), 0 2px 8px rgba(0,0,0,0.6);
+    letter-spacing: 5px;
+    line-height: 1.2;
+    margin-bottom: 8px;
+    position: relative;
+  }
+  .ev-main-subtitle {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(12px, 2vw, 16px);
+    color: var(--text-dim-ice);
+    letter-spacing: 4px;
+    margin-bottom: 18px;
+    text-transform: uppercase;
+    position: relative;
+  }
+  .ev-time-pill {
+    display: inline-block;
+    background: rgba(0,229,255,0.1);
+    border: 1px solid var(--ice-dark);
+    border-radius: 20px;
+    padding: 6px 22px;
+    font-size: 14px;
+    color: var(--ice-light);
+    letter-spacing: 1px;
+    position: relative;
+  }
+  .ev-theme-tags {
+    display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;
+    margin: 16px 0 18px;
+    position: relative;
+  }
+  .ev-theme-tag {
+    display: inline-flex; align-items: center; gap: 5px;
+    padding: 4px 16px; border-radius: 20px;
+    font-size: 12px; font-weight: 700; letter-spacing: 2px;
+  }
+  .ev-theme-tag.ice { background: rgba(0,229,255,0.15); border: 1px solid rgba(0,229,255,0.4); color: var(--ice-light); }
+  .ev-theme-tag.melon { background: rgba(76,175,80,0.2); border: 1px solid rgba(105,240,174,0.4); color: #a5d6a7; }
+  .ev-theme-tag.penguin { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.3); color: #cfd8dc; }
+
+  .ev-divider-ornament {
+    display: flex; align-items: center; justify-content: center; gap: 12px;
+    margin: 16px auto 0; max-width: 500px;
+    position: relative;
+  }
+  .ev-divider-ornament span { color: var(--ice); font-size: 18px; }
+  .ev-divider-ornament .ev-line { flex: 1; height: 1px; background: linear-gradient(90deg, transparent, var(--ice-dark), transparent); }
+
+  /* ===== 通用容器 ===== */
+  .ev-container { max-width: 1000px; margin: 0 auto; padding: 0 16px; }
+
+  /* ===== 警告欄 ===== */
+  .ev-warning-bar {
+    margin: 30px auto;
+    max-width: 900px;
+    background: linear-gradient(135deg, #1a0000, #0f0500);
+    border: 1px solid #8b1a1a;
+    border-left: 4px solid var(--red);
+    border-radius: 6px;
+    padding: 16px 22px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  .ev-warning-bar .ev-icon { font-size: 28px; flex-shrink: 0; line-height: 1.3; }
+  .ev-warning-bar .ev-title { color: var(--red); font-weight: bold; font-size: 15px; margin-bottom: 6px; text-shadow: 0 0 8px var(--red-glow); }
+  .ev-warning-bar .ev-sub { color: #ff8a80; font-size: 13px; }
+  .ev-warning-bar .ev-items { color: var(--text-dim-ice); font-size: 13px; margin-top: 4px; line-height: 1.8; }
+
+  /* ===== 區塊標題 ===== */
+  .ev-sec-header { text-align: center; margin: 44px 0 24px; }
+  .ev-sec-header h2 { font-size: 20px; font-weight: 700; letter-spacing: 5px; }
+  .ev-sec-header h2.ice  { color: var(--ice);  text-shadow: 0 0 12px var(--ice-glow); }
+  .ev-sec-header h2.red  { color: #ef9a9a; text-shadow: 0 0 12px var(--red-glow); }
+  .ev-sec-header h2.gold { color: var(--gold); text-shadow: 0 0 12px rgba(255,215,64,0.5); }
+  .ev-sec-header .ev-under-line { width: 220px; height: 2px; margin: 10px auto 0; }
+  .ev-sec-header h2.ice  + .ev-under-line { background: linear-gradient(90deg, transparent, var(--ice), transparent); }
+  .ev-sec-header h2.red  + .ev-under-line { background: linear-gradient(90deg, transparent, var(--red), transparent); }
+  .ev-sec-header h2.gold + .ev-under-line { background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+
+  /* ===== 怪物卡片 ===== */
+  .ev-mob-cards { max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+
+  .ev-mob-card {
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.5);
+  }
+  .ev-mob-card::before {
+    content: '';
+    position: absolute; inset: 0;
+    border-radius: 8px;
+    border: 1px solid;
+    pointer-events: none;
+  }
+  .ev-mob-card.ice { background: linear-gradient(160deg, #061a28 0%, #040e18 100%); }
+  .ev-mob-card.ice::before { border-color: #0d4f6a; }
+  .ev-mob-card.fire { background: linear-gradient(160deg, #1a0800 0%, #100400 100%); }
+  .ev-mob-card.fire::before { border-color: #7f2000; }
+
+  .ev-mob-header {
+    padding: 12px 18px;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 8px;
+    font-weight: bold; font-size: 15px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .ev-mob-header.ice { color: var(--ice-light); background: rgba(0,77,86,0.4); }
+  .ev-mob-header.fire { color: #ffab91; background: rgba(100,20,0,0.5); }
+  .ev-mob-header .ev-loc-badge {
+    font-size: 12px; font-weight: normal;
+    padding: 2px 12px; border-radius: 12px; border: 1px solid;
+    white-space: nowrap;
+  }
+  .ev-mob-header.ice .ev-loc-badge { color: var(--ice-light); border-color: var(--ice-dark); }
+  .ev-mob-header.fire .ev-loc-badge { color: #ffab91; border-color: #7f2000; }
+
+  .ev-mob-body { padding: 16px 18px; }
+  .ev-drop-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 10px; font-size: 13px;
+  }
+  .ev-drop-item {
+    padding: 8px 12px; border-radius: 4px;
+    background: rgba(255,255,255,0.02);
+    border-left: 2px solid transparent;
+    line-height: 1.6;
+  }
+  .ev-drop-item .ev-label { display: block; font-size: 11px; letter-spacing: 2px; margin-bottom: 4px; font-weight: bold; }
+  .ev-drop-item.event  { border-left-color: var(--ice); }
+  .ev-drop-item.event  .ev-label { color: var(--ice); }
+  .ev-drop-item.gem    { border-left-color: #42a5f5; }
+  .ev-drop-item.gem    .ev-label { color: #90caf9; }
+  .ev-drop-item.skill  { border-left-color: #ab47bc; }
+  .ev-drop-item.skill  .ev-label { color: #ce93d8; }
+  .ev-drop-item.scroll { border-left-color: var(--green); }
+  .ev-drop-item.scroll .ev-label { color: #a5d6a7; }
+  .ev-drop-item.box    { border-left-color: var(--orange); }
+  .ev-drop-item.box    .ev-label { color: #ffcc80; }
+  .ev-drop-item.mat    { border-left-color: #8d6e63; }
+  .ev-drop-item.mat    .ev-label { color: #bcaaa4; }
+  .ev-drop-item.dragon { border-left-color: #42a5f5; }
+  .ev-drop-item.dragon .ev-label { color: #64b5f6; }
+
+  /* ===== 沁涼項鍊能力 ===== */
+  .ev-belt-card {
+    max-width: 900px; margin: 0 auto;
+    background: linear-gradient(160deg, #061a28, #040e18);
+    border: 1px solid var(--ice-dark);
+    border-top: 3px solid var(--ice);
+    border-radius: 8px;
+    padding: 20px 24px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.5), 0 0 16px rgba(0,229,255,0.06);
+  }
+  .ev-belt-title {
+    font-size: 16px; font-weight: bold;
+    color: var(--ice-light);
+    margin-bottom: 14px;
+    text-shadow: 0 0 8px var(--ice-glow);
+  }
+  .ev-stat-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .ev-stat-tag {
+    padding: 5px 14px; border-radius: 4px;
+    font-size: 13px; font-weight: bold;
+    background: rgba(0,0,0,0.4);
+    border: 1px solid var(--ice-dark);
+    color: var(--ice-light);
+  }
+  .ev-stat-tag.red    { border-color: #c62828; color: #ef9a9a; }
+  .ev-stat-tag.blue   { border-color: #1565c0; color: #90caf9; }
+  .ev-stat-tag.purple { border-color: #6a1b9a; color: #ce93d8; }
+  .ev-stat-tag.warn   { border-color: #8b4513; color: #ffcc80; }
+
+  /* ===== 龍印魔石系統 ===== */
+  .ev-dragon-system { max-width: 900px; margin: 0 auto; }
+  .ev-dragon-intro {
+    background: linear-gradient(160deg, #0d1a2e, #071422);
+    border: 1px solid #1a3a6c;
+    border-top: 3px solid #42a5f5;
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin-bottom: 24px;
+  }
+  .ev-dragon-intro-title {
+    font-size: 16px; font-weight: 900; color: #90caf9;
+    margin-bottom: 8px;
+    text-shadow: 0 0 10px rgba(66,165,245,0.5);
+  }
+  .ev-dragon-intro p { font-size: 13px; color: #b0bec5; line-height: 1.8; }
+  .ev-dragon-intro strong { color: #64b5f6; }
+  .ev-dragon-intro .ev-safe-tag {
+    display: inline-block;
+    background: rgba(76,175,80,0.15);
+    border: 1px solid #43a047;
+    color: #a5d6a7;
+    padding: 3px 12px; border-radius: 4px;
+    font-size: 12px; font-weight: bold;
+    margin-top: 8px;
+  }
+  .ev-rate-table {
+    width: 100%; border-collapse: collapse;
+    font-size: 13px; background: #060f1a;
+    margin-bottom: 24px;
+    border-radius: 8px; overflow: hidden;
+    border: 1px solid #1a3a6c;
+  }
+  .ev-rate-table thead tr { background: rgba(33,150,243,0.15); }
+  .ev-rate-table thead th {
+    padding: 10px 14px; color: #42a5f5;
+    font-weight: bold; letter-spacing: 2px; font-size: 12px;
+    border-bottom: 1px solid #1a3a6c; text-align: center;
+  }
+  .ev-rate-table tbody td {
+    padding: 8px 14px; text-align: center;
+    color: var(--text-main);
+    border-bottom: 1px solid rgba(33,150,243,0.08);
+  }
+  .ev-rate-table tbody td:first-child { font-weight: 600; color: #90caf9; }
+  .ev-rate-table tbody tr:last-child td { border-bottom: none; }
+  .ev-rate-table tbody tr:hover { background: rgba(33,150,243,0.04); }
+  .ev-stone-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(420px, 1fr)); gap: 20px; margin-bottom: 24px; }
+  .ev-stone-card {
+    background: linear-gradient(160deg, #0d1a2e, #071422);
+    border: 1px solid;
+    border-radius: 8px; overflow: hidden;
+  }
+  .ev-stone-card.warrior { border-color: #c62828; }
+  .ev-stone-card.archer  { border-color: #2e7d32; }
+  .ev-stone-card.mage    { border-color: #6a1b9a; }
+  .ev-stone-card.tank    { border-color: #1565c0; }
+  .ev-stone-card-head {
+    padding: 10px 16px; font-weight: bold; font-size: 14px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .ev-stone-card.warrior .ev-stone-card-head { background: rgba(198,40,40,0.2); color: #ef9a9a; }
+  .ev-stone-card.archer  .ev-stone-card-head { background: rgba(46,125,50,0.2); color: #a5d6a7; }
+  .ev-stone-card.mage    .ev-stone-card-head { background: rgba(106,27,154,0.2); color: #ce93d8; }
+  .ev-stone-card.tank    .ev-stone-card-head { background: rgba(21,101,192,0.2); color: #90caf9; }
+  .ev-stone-table {
+    width: 100%; border-collapse: collapse; font-size: 12.5px;
+  }
+  .ev-stone-table th {
+    padding: 8px 12px; text-align: left;
+    font-size: 11px; letter-spacing: 1px;
+    color: var(--text-dim-ice); border-bottom: 1px solid rgba(255,255,255,0.06);
+    background: rgba(0,0,0,0.2);
+  }
+  .ev-stone-table td {
+    padding: 7px 12px; color: var(--text-main);
+    border-bottom: 1px solid rgba(255,255,255,0.03);
+  }
+  .ev-stone-table td:first-child { font-weight: 600; white-space: nowrap; width: 70px; }
+  .ev-stone-table tr:last-child td { border-bottom: none; }
+  .ev-stone-table tr:hover { background: rgba(255,255,255,0.02); }
+  .ev-stone-table tr.top-tier td { color: var(--gold); font-weight: 700; }
+  .ev-dragon-source {
+    text-align: center; font-size: 13px; color: #78909c;
+    padding: 12px; background: rgba(0,0,0,0.2);
+    border-radius: 6px; border: 1px solid #1a3a6c;
+  }
+  .ev-dragon-source strong { color: #42a5f5; }
+  @media (max-width: 640px) { .ev-stone-cards { grid-template-columns: 1fr; } }
+
+  /* ===== NPC 兌換 ===== */
+  .ev-npc-card {
+    max-width: 900px; margin: 0 auto;
+    border-radius: 8px; overflow: hidden;
+    border: 1px solid var(--ice-dark);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  }
+  .ev-npc-header-bar {
+    background: rgba(0,77,86,0.4);
+    padding: 12px 20px;
+    font-size: 13px; color: var(--ice-light);
+    letter-spacing: 1px; text-align: center;
+    border-bottom: 1px solid var(--ice-dark);
+  }
+  .ev-npc-card table {
+    width: 100%; border-collapse: collapse;
+    font-size: 13.5px; background: #040e18;
+  }
+  .ev-npc-card thead tr { background: rgba(0,150,136,0.15); }
+  .ev-npc-card thead th {
+    padding: 11px 14px; color: var(--ice);
+    font-weight: bold; letter-spacing: 2px; font-size: 12px;
+    border-bottom: 1px solid var(--ice-dark); text-align: left;
+  }
+  .ev-npc-card thead th:nth-child(2) { text-align: center; }
+  .ev-npc-card thead th:last-child { text-align: center; }
+  .ev-npc-card tbody tr { border-bottom: 1px solid rgba(0,150,136,0.1); transition: background 0.15s; }
+  .ev-npc-card tbody tr:hover { background: rgba(0,229,255,0.04); }
+  .ev-npc-card tbody tr.highlight { background: rgba(0,229,255,0.06) !important; }
+  .ev-npc-card tbody td { padding: 9px 14px; color: var(--text-main); }
+  .ev-npc-card tbody td:nth-child(2) { text-align: center; color: var(--ice-light); font-weight: 600; }
+  .ev-npc-card tbody td:last-child { text-align: center; font-weight: bold; color: var(--ice); }
+  .ev-npc-card tbody td.qty-red { color: var(--red) !important; text-shadow: 0 0 6px var(--red-glow); }
+  .ev-npc-card tbody td.qty-gold { color: var(--gold) !important; }
+
+  /* ===== 浮動粒子 ===== */
+  .ev-particles { position: fixed; inset: 0; pointer-events: none; overflow: hidden; z-index: 0; }
+  .ev-particle {
+    position: absolute; border-radius: 50%;
+    animation: ev-float-up linear infinite; opacity: 0;
+  }
+  @keyframes ev-float-up {
+    0%   { transform: translateY(100vh) translateX(0); opacity: 0; }
+    10%  { opacity: 0.5; }
+    50%  { transform: translateY(50vh) translateX(-8px); }
+    90%  { opacity: 0.15; }
+    100% { transform: translateY(-50px) translateX(12px); opacity: 0; }
+  }
+
+  /* ===== 底部 ===== */
+  .ev-footer-ornament {
+    text-align: center; margin-top: 60px; padding: 30px;
+    border-top: 1px solid rgba(0,150,136,0.2);
+    color: #e0f2f1; font-size: 12px;
+    letter-spacing: 2px; line-height: 2;
+  }
+
+  @media (max-width: 640px) {
+    .ev-drop-grid { grid-template-columns: 1fr; }
+    .ev-main-title { font-size: 24px; }
+  }
+</style>
+</head>
+<body>
+<nav class="topnav"><a class="topnav-logo" href="index.html">⚔️ 爽玩天堂</a><div class="topnav-sep"></div><div class="topnav-links" id="navLinks"><a class="topnav-link" href="index.html">首頁</a><a class="topnav-link" href="events-list.html">活動介紹</a><a class="topnav-link" href="features.html">遊戲特色</a><a class="topnav-link" href="items.html">裝備與道具</a><a class="topnav-link" href="boss.html">BOSS介紹</a><a class="topnav-link" href="maps.html">地圖特殊掉落</a><a class="topnav-link" href="download.html">檔案下載</a><a class="topnav-link" href="rates.html">版本倍率</a><a class="topnav-link" href="promote.html">推文與直播</a><div class="topnav-dropdown"><a class="topnav-link">遊戲規章 ▾</a><div class="dropdown-menu"><a href="rules.html">伺服器規章</a><a href="disclaimer.html">免責聲明</a><a href="anti-cheat.html">防作弊聲明</a></div></div><div class="topnav-dropdown"><a class="topnav-link">聯絡我們 ▾</a><div class="dropdown-menu"><a href="https://line.me/ti/g2/RXF5-vodTEcXp_iqPF8wcDh3Wnxxrd4hpo_RNQ?utm_source=invitation&utm_medium=link_copy&utm_campaign=default" target="_blank">LINE 官方社群</a><a href="https://lin.ee/Otc2gGk" target="_blank">LINE 官方</a></div></div><a class="topnav-link" href="search.html" style="color:var(--pink);font-weight:bold">🔍 搜尋</a></div><div class="topnav-right"><a class="topnav-line-btn" href="https://lin.ee/TlneDmQ" target="_blank">LINE 客服</a></div><div class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')"><span></span><span></span><span></span></div></nav>
+<div class="float-sidebar"><button class="float-btn gift" data-modal="modal-gift"><span class="fb-icon">🎁</span><span class="fb-label">申請禮包</span></button><button class="float-btn line-btn" data-modal="modal-line"><span class="fb-icon"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/4/41/LINE_logo.svg" alt="LINE"></span><span class="fb-label">LINE</span></button></div>
+<div class="float-modal" id="modal-gift"><div class="float-modal-box"><span class="modal-close">✕</span><div class="modal-title">🎁 預約LINE禮包</div><div class="modal-body"><p>▸ 煉獄耳環<br>▸ 名譽貨幣【刻印】× 100<br>▸ 巧克力蛋糕【刻印】× 100<br>▸ 永久巧克力（永久三水）<br>▸ 永久名譽貨幣（永久三水）<br>▸ 象牙塔治癒藥水 × 10000<br><br><strong>加入 LINE 官方社群後私訊管理員即可領取。</strong></p></div><a class="modal-btn" href="https://lin.ee/TlneDmQ" target="_blank">加入 LINE 申請禮包</a></div></div>
+<div class="float-modal" id="modal-line"><div class="float-modal-box"><span class="modal-close">✕</span><div class="modal-title">💬 LINE 聯絡方式</div><div class="modal-body" style="text-align:center"><img loading="lazy" src="https://telegraph-image-1n0.pages.dev/file/AgACAgUAAyEGAAS3SV8sAAIDw2oVJZ2FdyRNX0Pr_KA7NJhHWUfUAALJDmsbhZOoVMSfPhUx5GY7AQADAgADeAADOwQ.png" alt="LINE QR Code" style="width:150px;height:150px;margin:0 auto 12px;display:block;border-radius:8px;"><p style="color:var(--text);font-size:.9em;margin:0">私訊小編幫您開單^^<br>給您最尊榮的服務</p></div><a class="modal-btn" href="https://line.me/ti/g2/RXF5-vodTEcXp_iqPF8wcDh3Wnxxrd4hpo_RNQ?utm_source=invitation&utm_medium=link_copy&utm_campaign=default" target="_blank">加入 LINE 官方社群</a></div></div>
+
+<div class="ev-particles" id="ev-particles"></div>
+
+<!-- ===== 主橫幅 ===== -->
+<div class="ev-banner">
+  <div class="ev-ice-halo"></div>
+  <div class="ev-deco-left">❄️</div>
+  <div class="ev-deco-right">🧊</div>
+  <div class="ev-month-badge">2025 ‧ SUMMER ‧ 七月</div>
+  <h1 class="ev-main-title">💦沁涼消暑大作戰💦</h1>
+  <p class="ev-main-subtitle">Summer Cooling Event</p>
+  <div class="ev-theme-tags">
+    <span class="ev-theme-tag ice">❄️ 消暑冰霜</span>
+    <span class="ev-theme-tag melon">🍉 消暑西瓜</span>
+    <span class="ev-theme-tag penguin">🐧 避暑企鵝</span>
+  </div>
+  <div class="ev-time-pill">⏰ 活動時間：07/01 維修後 ─ 07/31 維修前</div>
+  <div class="ev-divider-ornament">
+    <div class="ev-line"></div>
+    <span>❄</span><span>🍉</span><span>❄</span>
+    <div class="ev-line"></div>
+  </div>
+</div>
+
+<!-- ===== 活動道具移除說明 ===== -->
+<div class="ev-warning-bar">
+  <div class="ev-icon">⚠️</div>
+  <div>
+    <div class="ev-title">【重要提醒】活動結束道具移除說明</div>
+    <div class="ev-sub">本活動結束後，將統一移除以下內容：</div>
+    <div class="ev-items">
+      ❌ 消暑冰霜 ｜ ❌ 消暑西瓜(活動) ｜ ❌ 沁涼項鍊盒 ｜ ❌ 相關 NPC / 活動道具 / BOSS
+    </div>
+  </div>
+</div>
+
+<!-- ===== 討伐目標 ===== -->
+<div class="ev-sec-header">
+  <h2 class="ice">◈ 討伐目標與掉落清單 ◈</h2>
+  <div class="ev-under-line"></div>
+</div>
+
+<div class="ev-mob-cards">
+
+  <!-- 活動怪物：泳裝男孩 / 泳裝女孩 -->
+  <div class="ev-mob-card ice">
+    <div class="ev-mob-header ice">
+      <span>🏖️ (活動怪物) 泳裝男孩 / 泳裝女孩　<span style="font-size:13px; font-weight:normal; color:#80deea;">各地監 ＆ 世界事件｜專屬地圖</span></span>
+    </div>
+    <div class="ev-mob-body">
+      <div style="font-size:12px; color:#4dd0e1; margin-bottom:10px; line-height:1.7;">
+        📍 古魯丁地監、舊龍之谷地監、水晶洞穴、象牙塔、傲慢之塔、夢幻之島、拉斯塔巴德、地底湖、精靈墓穴、海賊地監、龍之谷地監、遺忘之島
+      </div>
+      <div style="font-size:12px; color:#80deea; margin-bottom:14px; padding:8px 12px; background:rgba(0,229,255,0.05); border-radius:4px; border-left:3px solid var(--ice-dark);">
+        ⚠️ 以下掉落皆為<strong>機率獲得</strong>，並非每次擊殺皆會全部掉落
+      </div>
+      <div class="ev-drop-grid">
+        <div class="ev-drop-item event">
+          <span class="ev-label">❄️ 活動專屬</span>
+          消暑冰霜<br>
+          消暑西瓜(活動)
+        </div>
+        <div class="ev-drop-item gem">
+          <span class="ev-label">💎 貨幣寶石</span>
+          金幣<br>
+          紅寶石 / 藍寶石 / 綠寶石
+        </div>
+        <div class="ev-drop-item scroll">
+          <span class="ev-label">📜 卷軸</span>
+          對盔甲施法的卷軸<br>
+          對武器施法的卷軸
+        </div>
+        <div class="ev-drop-item box">
+          <span class="ev-label">📦 裝備寶箱</span>
+          一般武器箱 / 高級武器箱<br>
+          一般防具箱 / 高級防具箱<br>
+          一般飾品箱 / 高級飾品箱
+        </div>
+        <div class="ev-drop-item mat">
+          <span class="ev-label">🛠️ 製作材料</span>
+          高級製作秘笈<br>
+          稀有製作秘笈
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOSS：燥熱的炎魔 -->
+  <div class="ev-mob-card fire">
+    <div class="ev-mob-header fire">
+      <span>🔥 (活動 BOSS) 燥熱的炎魔</span>
+      <span class="ev-loc-badge">⏰ 8 小時重生 ｜ 📍 大陸連絡船</span>
+    </div>
+    <div class="ev-mob-body">
+      <div style="font-size:12px; color:#ff8a65; margin-bottom:14px; padding:8px 12px; background:rgba(255,82,82,0.06); border-radius:4px; border-left:3px solid #ff5252;">
+        ⚠️ 以下掉落皆為<strong>機率獲得</strong>，並非每次擊殺皆會全部掉落
+      </div>
+      <div class="ev-drop-grid">
+        <div class="ev-drop-item event">
+          <span class="ev-label">❄️ 活動專屬</span>
+          (活動) 沁涼項鍊盒<br>
+          消暑冰霜<br>
+          消暑西瓜(活動)
+        </div>
+        <div class="ev-drop-item dragon">
+          <span class="ev-label">🐉 龍印魔石（0階）</span>
+          龍印魔石（鬥士）<br>
+          龍印魔石（弓手）<br>
+          龍印魔石（賢者）<br>
+          龍印魔石（衝鋒）
+        </div>
+        <div class="ev-drop-item gem">
+          <span class="ev-label">💎 貨幣</span>
+          金幣<br>
+          藍鑽
+        </div>
+        <div class="ev-drop-item gem">
+          <span class="ev-label">💎 寶石</span>
+          鑽石 / 紅寶石 / 藍寶石 / 綠寶石<br>
+          品質鑽石 / 品質紅 / 藍 / 綠寶石<br>
+          高品質鑽石 / 高品質紅 / 藍 / 綠寶石
+        </div>
+        <div class="ev-drop-item skill">
+          <span class="ev-label">📘 技能書</span>
+          技術書（衝擊之暈）<br>
+          魔法書（聖結界）<br>
+          精靈水晶（三重矢）<br>
+          黑暗精靈水晶（雙重破壞）<br>
+          魔法書（王者之劍）
+        </div>
+        <div class="ev-drop-item scroll">
+          <span class="ev-label">📜 施法卷軸</span>
+          對盔甲施法的卷軸<br>
+          對武器施法的卷軸<br>
+          受祝福的對盔甲施法的卷軸<br>
+          受祝福的對武器施法的卷軸<br>
+          受詛咒的對盔甲施法的卷軸<br>
+          受詛咒的對武器施法的卷軸
+        </div>
+        <div class="ev-drop-item scroll">
+          <span class="ev-label">🛡️ 防爆卷軸</span>
+          一般的防爆卷軸<br>
+          祝福的防爆卷軸<br>
+          詛咒的防爆卷軸
+        </div>
+        <div class="ev-drop-item box">
+          <span class="ev-label">📦 武器箱</span>
+          一般武器箱<br>
+          高級武器箱<br>
+          稀有武器箱
+        </div>
+        <div class="ev-drop-item box">
+          <span class="ev-label">📦 防具箱</span>
+          一般防具箱<br>
+          高級防具箱<br>
+          稀有防具箱
+        </div>
+        <div class="ev-drop-item box">
+          <span class="ev-label">📦 飾品箱</span>
+          一般飾品箱<br>
+          高級飾品箱<br>
+          稀有飾品箱
+        </div>
+        <div class="ev-drop-item mat">
+          <span class="ev-label">🛠️ 製作秘笈</span>
+          高級製作秘笈<br>
+          稀有製作秘笈<br>
+          英雄製作秘笈
+        </div>
+        <div class="ev-drop-item mat">
+          <span class="ev-label">🛠️ 強化 / 升階素材</span>
+          六芒星升階石<br>
+          戰馬雕像升級石<br>
+          聖物成長藥劑<br>
+          黑色血痕<br>
+          少了刀刃的武器
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ===== 活動限定道具 ===== -->
+<div class="ev-sec-header">
+  <h2 class="ice">◈ 活動限定道具能力 ◈</h2>
+  <div class="ev-under-line"></div>
+</div>
+
+<div class="ev-belt-card">
+  <div class="ev-belt-title">💎 (活動) 沁涼項鍊 ─ 時效 30 日</div>
+  <div class="ev-stat-tags">
+    <span class="ev-stat-tag">🌟 全能力 +1</span>
+    <span class="ev-stat-tag">❤️ HP +600</span>
+    <span class="ev-stat-tag">💧 MP +120</span>
+    <span class="ev-stat-tag blue">⚔️ 近/遠額外傷害 +3</span>
+    <span class="ev-stat-tag purple">✨ SP +2</span>
+    <span class="ev-stat-tag">🔮 抗魔 +10</span>
+    <span class="ev-stat-tag warn">🛡️ 防禦 -5</span>
+  </div>
+</div>
+
+<!-- ===== NPC 兌換 ===== -->
+<div class="ev-sec-header">
+  <h2 class="gold">◈ 🐧 來不及避暑的企鵝・活動兌換 NPC ◈</h2>
+  <div class="ev-under-line"></div>
+</div>
+
+<div class="ev-npc-card">
+  <div class="ev-npc-header-bar">
+    ※ 以下物品皆需使用「消暑冰霜」進行兌換
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th style="width:50%;">兌換物品</th>
+        <th style="width:18%;">獲得數量</th>
+        <th style="width:32%;">所需「消暑冰霜」</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="highlight">
+        <td>(活動) 沁涼項鍊（30日）</td>
+        <td>1</td>
+        <td class="qty-red">29,999</td>
+      </tr>
+      <tr class="highlight">
+        <td>龍印魔石強化卷軸</td>
+        <td>1</td>
+        <td class="qty-gold">399</td>
+      </tr>
+      <tr>
+        <td>防止噴物品 <span style="color:#546e7a; font-size:0.88em;">（帶幾個防噴幾個）</span></td>
+        <td>3</td>
+        <td>499</td>
+      </tr>
+      <tr>
+        <td>EXP 護身符</td>
+        <td>4</td>
+        <td>150</td>
+      </tr>
+      <tr>
+        <td>高級製作秘笈</td>
+        <td>5</td>
+        <td>3,600</td>
+      </tr>
+      <tr>
+        <td>稀有製作秘笈</td>
+        <td>6</td>
+        <td>8,888</td>
+      </tr>
+      <tr>
+        <td>英雄製作秘笈</td>
+        <td>7</td>
+        <td>36,666</td>
+      </tr>
+      <tr>
+        <td>回憶蠟燭</td>
+        <td>8</td>
+        <td>26,888</td>
+      </tr>
+      <tr>
+        <td>穿雲箭（組隊）</td>
+        <td>1</td>
+        <td>28</td>
+      </tr>
+      <tr>
+        <td>穿雲箭（血盟）</td>
+        <td>1</td>
+        <td>28</td>
+      </tr>
+      <tr>
+        <td>對武器祝福的卷軸</td>
+        <td>1</td>
+        <td>568</td>
+      </tr>
+      <tr>
+        <td>對防具祝福的卷軸</td>
+        <td>1</td>
+        <td>568</td>
+      </tr>
+      <tr>
+        <td>對飾品祝福的卷軸</td>
+        <td>1</td>
+        <td>568</td>
+      </tr>
+      <tr>
+        <td>風之武器強化卷軸</td>
+        <td>1</td>
+        <td>228</td>
+      </tr>
+      <tr>
+        <td>地之武器強化卷軸</td>
+        <td>1</td>
+        <td>228</td>
+      </tr>
+      <tr>
+        <td>水之武器強化卷軸</td>
+        <td>1</td>
+        <td>228</td>
+      </tr>
+      <tr>
+        <td>火之武器強化卷軸</td>
+        <td>1</td>
+        <td>228</td>
+      </tr>
+      <tr>
+        <td>六芒星升階石</td>
+        <td>1</td>
+        <td>280</td>
+      </tr>
+      <tr>
+        <td>戰馬雕像升級石</td>
+        <td>1</td>
+        <td>280</td>
+      </tr>
+      <tr>
+        <td>聖物成長藥劑</td>
+        <td>1</td>
+        <td>280</td>
+      </tr>
+      <tr>
+        <td>聖物召喚擴充卷</td>
+        <td>1</td>
+        <td>56,000</td>
+      </tr>
+      <tr>
+        <td>聖物：甘地的圖騰</td>
+        <td>1</td>
+        <td>36,888</td>
+      </tr>
+      <tr>
+        <td>聖物：阿吐巴的圖騰</td>
+        <td>1</td>
+        <td>36,888</td>
+      </tr>
+      <tr>
+        <td>聖物：那魯加的圖騰</td>
+        <td>1</td>
+        <td>36,888</td>
+      </tr>
+      <tr class="highlight">
+        <td>職業之力箱（自選）</td>
+        <td>1</td>
+        <td class="qty-red">120,000</td>
+      </tr>
+      <tr>
+        <td>光之力量肩甲箱</td>
+        <td>1</td>
+        <td class="qty-gold">38,888</td>
+      </tr>
+      <tr>
+        <td>光之敏捷肩甲箱</td>
+        <td>1</td>
+        <td class="qty-gold">38,888</td>
+      </tr>
+      <tr>
+        <td>光之智慧肩甲箱</td>
+        <td>1</td>
+        <td class="qty-gold">38,888</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ===== 底部 ===== -->
+<div class="ev-footer-ornament">
+  <div style="font-size:18px; opacity:0.4; margin-bottom:8px;">❄ ◇ ❄</div>
+  以上活動內容最終解釋權歸主辦方所有<br>
+  如有任何疑問請聯繫遊戲客服
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-col-title">爽玩天堂</div>
+      <ul class="footer-links">
+        <li><a href="index.html">首頁</a></li>
+        <li><a href="events-list.html">活動介紹</a></li>
+        <li><a href="download.html">檔案下載</a></li>
+        <li><a href="rates.html">版本倍率</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">遊戲資訊</div>
+      <ul class="footer-links">
+        <li><a href="features.html">遊戲特色</a></li>
+        <li><a href="boss.html">BOSS介紹</a></li>
+        <li><a href="maps.html">特殊地圖掉落</a></li>
+        <li><a href="items.html">道具介紹</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">聯絡我們</div>
+      <ul class="footer-links">
+        <li><a href="#" onclick="document.getElementById('modal-line').classList.add('open');return false;">LINE 官方社群</a></li>
+        <li><a href="promote.html">推文與直播</a></li>
+      </ul>
+    </div>
+  </div>
+  <div style="text-align:center;padding:20px 0;"><a href="https://www.gamex123.com/lineage.html" target="_blank"><img src="https://telegraph-image-1n0.pages.dev/file/AgACAgUAAyEGAAS3SV8sAAIDxmoVY552dFOKeKn6_vyXg1NzhUZCAAJnD2sbhZOoVPrpotXRf4rQAQADAgADeAADOwQ.gif" alt="" style="max-width:100%;display:block;margin:0 auto;"></a></div>
+  <div class="footer-copy">© 2026 爽玩天堂 · 版權所有</div>
+</footer>
+
+<script src="main.js"></script>
+<script src="events-data.js"></script>
+<script>
+(function(){
+  var c = document.getElementById('ev-particles');
+  for(var i=0;i<30;i++){
+    var p=document.createElement('div');
+    p.className='ev-particle';
+    p.style.left=Math.random()*100+'%';
+    var s=1.5+Math.random()*3;
+    p.style.width=s+'px'; p.style.height=s+'px';
+    p.style.animationDuration=(10+Math.random()*14)+'s';
+    p.style.animationDelay=(Math.random()*18)+'s';
+    var colors=['rgba(0,229,255,0.6)','rgba(128,222,234,0.5)','rgba(255,255,255,0.4)','rgba(178,235,242,0.4)','rgba(105,240,174,0.3)'];
+    var col=colors[Math.floor(Math.random()*colors.length)];
+    p.style.background='transparent';
+    p.style.border='1px solid '+col;
+    p.style.boxShadow='inset 0 0 '+(s/2)+'px '+col;
+    c.appendChild(p);
+  }
+})();
+</script>
+<button id="backToTop" title="回到頂部">&#8679;</button>
+</body>
+</html>
