@@ -24,6 +24,8 @@
     --red-glow: rgba(255,82,82,0.5);
     --orange: #ff9100;
     --green: #69f0ae;
+    --melon: #ff5252;
+    --melon-green: #69f0ae;
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -132,7 +134,7 @@
     font-size: 12px; font-weight: 700; letter-spacing: 2px;
   }
   .ev-theme-tag.ice { background: rgba(0,229,255,0.15); border: 1px solid rgba(0,229,255,0.4); color: var(--ice-light); }
-  .ev-theme-tag.melon { background: rgba(76,175,80,0.2); border: 1px solid rgba(105,240,174,0.4); color: #a5d6a7; }
+  .ev-theme-tag.melon { background: rgba(255,82,82,0.15); border: 1px solid rgba(255,82,82,0.4); color: var(--melon); }
   .ev-theme-tag.penguin { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.3); color: #cfd8dc; }
 
   .ev-divider-ornament {
@@ -241,34 +243,53 @@
   .ev-drop-item.dragon { border-left-color: #42a5f5; }
   .ev-drop-item.dragon .ev-label { color: #64b5f6; }
 
-  /* ===== 沁涼項鍊能力 ===== */
-  .ev-belt-card {
+  /* ===== 活動道具能力區塊 ===== */
+  .ev-item-cards-container {
     max-width: 900px; margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 20px;
+  }
+  .ev-item-card {
     background: linear-gradient(160deg, #061a28, #040e18);
-    border: 1px solid var(--ice-dark);
-    border-top: 3px solid var(--ice);
     border-radius: 8px;
     padding: 20px 24px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.5);
+    position: relative;
+    border: 1px solid transparent;
+  }
+  .ev-item-card.ice {
+    border-color: var(--ice-dark);
+    border-top: 3px solid var(--ice);
     box-shadow: 0 4px 24px rgba(0,0,0,0.5), 0 0 16px rgba(0,229,255,0.06);
   }
-  .ev-belt-title {
-    font-size: 16px; font-weight: bold;
-    color: var(--ice-light);
-    margin-bottom: 14px;
-    text-shadow: 0 0 8px var(--ice-glow);
+  .ev-item-card.melon {
+    border-color: #7f2000;
+    border-top: 3px solid var(--melon);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.5), 0 0 16px rgba(255,82,82,0.06);
   }
+  .ev-item-title {
+    font-size: 16px; font-weight: bold;
+    margin-bottom: 14px;
+    position: relative;
+  }
+  .ev-item-card.ice .ev-item-title { color: var(--ice-light); text-shadow: 0 0 8px var(--ice-glow); }
+  .ev-item-card.melon .ev-item-title { color: #ffab91; text-shadow: 0 0 8px var(--red-glow); }
   .ev-stat-tags { display: flex; flex-wrap: wrap; gap: 8px; }
   .ev-stat-tag {
     padding: 5px 14px; border-radius: 4px;
     font-size: 13px; font-weight: bold;
     background: rgba(0,0,0,0.4);
-    border: 1px solid var(--ice-dark);
-    color: var(--ice-light);
+    border: 1px solid;
+    color: var(--text-main);
   }
-  .ev-stat-tag.red    { border-color: #c62828; color: #ef9a9a; }
-  .ev-stat-tag.blue   { border-color: #1565c0; color: #90caf9; }
-  .ev-stat-tag.purple { border-color: #6a1b9a; color: #ce93d8; }
-  .ev-stat-tag.warn   { border-color: #8b4513; color: #ffcc80; }
+  .ev-item-card.ice .ev-stat-tag { border-color: var(--ice-dark); color: var(--ice-light); }
+  .ev-item-card.ice .ev-stat-tag.blue   { border-color: #1565c0; color: #90caf9; }
+  .ev-item-card.ice .ev-stat-tag.purple { border-color: #6a1b9a; color: #ce93d8; }
+  .ev-item-card.ice .ev-stat-tag.warn   { border-color: #8b4513; color: #ffcc80; }
+  .ev-item-card.melon .ev-stat-tag { border-color: #7f2000; color: #ffab91; }
+  .ev-item-card.melon .ev-stat-tag.green  { border-color: #2e7d32; color: #a5d6a7; }
+  .ev-item-card.melon .ev-stat-tag.buff   { border-color: var(--orange); color: var(--gold); }
 
   /* ===== 龍印魔石系統 ===== */
   .ev-dragon-system { max-width: 900px; margin: 0 auto; }
@@ -420,6 +441,7 @@
   @media (max-width: 640px) {
     .ev-drop-grid { grid-template-columns: 1fr; }
     .ev-main-title { font-size: 24px; }
+    .ev-item-cards-container { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -459,7 +481,7 @@
     <div class="ev-title">【重要提醒】活動結束道具移除說明</div>
     <div class="ev-sub">本活動結束後，將統一移除以下內容：</div>
     <div class="ev-items">
-      ❌ 消暑冰霜 ｜ ❌ 消暑西瓜(活動) ｜ ❌ 沁涼項鍊盒 ｜ ❌ 相關 NPC / 活動道具 / BOSS
+      ❌ 消暑冰霜 ｜ 🍉 消暑西瓜(活動) ｜ ❌ 沁涼項鍊盒 ｜ ❌ 相關 NPC / 活動道具 / BOSS
     </div>
   </div>
 </div>
@@ -617,28 +639,33 @@
   <div class="ev-under-line"></div>
 </div>
 
-<div class="ev-belt-card">
-  <div class="ev-belt-title">💎 (活動) 沁涼項鍊 ─ 時效 30 日</div>
-  <div class="ev-stat-tags">
-    <span class="ev-stat-tag">🌟 全能力 +1</span>
-    <span class="ev-stat-tag">❤️ HP +600</span>
-    <span class="ev-stat-tag">💧 MP +120</span>
-    <span class="ev-stat-tag blue">⚔️ 近/遠額外傷害 +3</span>
-    <span class="ev-stat-tag purple">✨ SP +2</span>
-    <span class="ev-stat-tag">🔮 抗魔 +10</span>
-    <span class="ev-stat-tag warn">🛡️ 防禦 -5</span>
-  </div>
-</div>
+<div class="ev-item-cards-container">
 
-<div class="ev-belt-card" style="margin-top:16px;">
-  <div class="ev-belt-title">🍉 消暑西瓜(活動) ─ 使用後獲得增益效果</div>
-  <div class="ev-stat-tags">
-    <span class="ev-stat-tag">🌟 全能力 +1</span>
-    <span class="ev-stat-tag">🔮 抗魔 +15</span>
-    <span class="ev-stat-tag">🛡️ 防禦 +3</span>
-    <span class="ev-stat-tag">❤️ HP +500</span>
-    <span class="ev-stat-tag">💧 MP +100</span>
+  <div class="ev-item-card ice">
+    <div class="ev-item-title">💎 (活動) 沁涼項鍊 ─ 時效 30 日</div>
+    <div class="ev-stat-tags">
+      <span class="ev-stat-tag">🌟 全能力 +1</span>
+      <span class="ev-stat-tag">❤️ HP +600</span>
+      <span class="ev-stat-tag">💧 MP +120</span>
+      <span class="ev-stat-tag blue">⚔️ 近/遠額外傷害 +3</span>
+      <span class="ev-stat-tag purple">✨ SP +2</span>
+      <span class="ev-stat-tag">🔮 抗魔 +10</span>
+      <span class="ev-stat-tag warn">🛡️ 防禦 -5</span>
+    </div>
   </div>
+
+  <div class="ev-item-card melon">
+    <div class="ev-item-title">🍉 (活動) 消暑西瓜 ─ 食用時效性 BUFF</div>
+    <div class="ev-stat-tags">
+      <span class="ev-stat-tag">🌟 全能力 +1</span>
+      <span class="ev-stat-tag green">🔮 魔抗 +15</span>
+      <span class="ev-stat-tag">🛡️ 防禦 +3</span>
+      <span class="ev-stat-tag">❤️ HP +500</span>
+      <span class="ev-stat-tag">💧 MP +100</span>
+      <span class="ev-stat-tag buff">⏱️ 食用後獲得 1,800 秒效果</span>
+    </div>
+  </div>
+
 </div>
 
 <!-- ===== NPC 兌換 ===== -->
@@ -672,32 +699,32 @@
       </tr>
       <tr>
         <td>防止噴物品 <span style="color:#546e7a; font-size:0.88em;">（帶幾個防噴幾個）</span></td>
-        <td>3</td>
+        <td>1</td>
         <td>499</td>
       </tr>
       <tr>
         <td>EXP 護身符</td>
-        <td>4</td>
+        <td>1</td>
         <td>150</td>
       </tr>
       <tr>
         <td>高級製作秘笈</td>
-        <td>5</td>
+        <td>1</td>
         <td>3,600</td>
       </tr>
       <tr>
         <td>稀有製作秘笈</td>
-        <td>6</td>
+        <td>1</td>
         <td>8,888</td>
       </tr>
       <tr>
         <td>英雄製作秘笈</td>
-        <td>7</td>
+        <td>1</td>
         <td>36,666</td>
       </tr>
       <tr>
         <td>回憶蠟燭</td>
-        <td>8</td>
+        <td>1</td>
         <td>26,888</td>
       </tr>
       <tr>
@@ -856,7 +883,7 @@
     p.style.width=s+'px'; p.style.height=s+'px';
     p.style.animationDuration=(10+Math.random()*14)+'s';
     p.style.animationDelay=(Math.random()*18)+'s';
-    var colors=['rgba(0,229,255,0.6)','rgba(128,222,234,0.5)','rgba(255,255,255,0.4)','rgba(178,235,242,0.4)','rgba(105,240,174,0.3)'];
+    var colors=['rgba(0,229,255,0.6)','rgba(128,222,234,0.5)','rgba(255,255,255,0.4)','rgba(178,235,242,0.4)','rgba(255,82,82,0.3)','rgba(105,240,174,0.3)'];
     var col=colors[Math.floor(Math.random()*colors.length)];
     p.style.background='transparent';
     p.style.border='1px solid '+col;
